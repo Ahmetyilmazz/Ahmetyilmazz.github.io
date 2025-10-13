@@ -60,7 +60,7 @@ export const certificates: Certificate[] = [
     organization: "BTK Akademi",
     date: "10.02.2025",
     duration: "14 Saat",
-    image: "./images/certificates/html5_ile_web_geliştirme.png",
+    image: "./images/certificates/HTML5_ile_web_geliştirme.png",
     credentialUrl:
       "https://www.btkakademi.gov.tr/portal/certificate/validate?certificateId=6mqFNMnj0g",
     category: "web",
