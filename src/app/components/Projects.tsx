@@ -20,8 +20,8 @@ export default function Projects() {
         "State Management",
       ],
       github: "https://github.com/Ahmetyilmazz/English-Learn",
-      live: "/videos/english_word.mp4",
-      image: "/images/english_learn.png",
+      live: "./videos/english_word.mp4",
+      image: "./images/english_learn.png",
     },
     {
       title: "Otoyol Rehberim",
@@ -39,8 +39,8 @@ export default function Projects() {
         "http",
       ],
       github: "https://github.com/Ahmetyilmazz/Otoyol-Rehberi",
-      live: "/videos/otoyol_rehberim.mp4",
-      image: "/images/otoyol_rehberim.png",
+      live: "./videos/otoyol_rehberim.mp4",
+      image: "./images/otoyol_rehberim.png",
     },
     {
       title: "Servis Takip Yazılımı",
@@ -53,8 +53,8 @@ export default function Projects() {
         "API Integration",
       ],
       github: "https://github.com/Ahmetyilmazz/ServisTakip",
-      live: "/videos/servis_takip.mp4",
-      image: "/images/servis_takip.png",
+      live: "./videos/servis_takip.mp4",
+      image: "./images/servis_takip.png",
     },
     {
       title: "Takım Uygulaması",
@@ -62,8 +62,8 @@ export default function Projects() {
         " bir spor kulübünün mobil uygulamasını tasarlamak. Kullanıcılar bu mobil uygulama sayesinde spor kulübüyle ilgili habeler, gelecek maçlar, oyuncular, anlık maç takibi, fikstür, anlık skorlar gibi bilgilere direkt erişim yapabilecek.",
       technologies: ["Flutter", "Google Auth", "UI / UX ", "RestFul API"],
       github: "https://github.com/Ahmetyilmazz/TeamApp",
-      live: "/videos/team_app.mp4",
-      image: "/images/team_app.png",
+      live: "./videos/team_app.mp4",
+      image: "./images/team_app.png",
     },
     {
       title: "Anlık Konum Takibi",
@@ -80,7 +80,7 @@ export default function Projects() {
       ],
       github: "https://github.com/Ahmetyilmazz/Instant_Location_Tracking",
       live: "/",
-      image: "/images/anlik_konum.png",
+      image: "./images/anlik_konum.png",
     },
     {
       title: "Görevlerim - Tablet",
@@ -100,7 +100,7 @@ export default function Projects() {
       ],
       github: "https://github.com/Ahmetyilmazz/Gorevlerim",
       live: "/",
-      image: "/images/cocuk_takip.png",
+      image: "./images/cocuk_takip.png",
     },
   ];
 

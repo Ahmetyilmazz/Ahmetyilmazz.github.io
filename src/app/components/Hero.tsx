@@ -25,7 +25,7 @@ export default function Hero() {
               className="w-full h-full rounded-full overflow-hidden"
             >
               <img
-                src="/images/profil.jpg"
+                src="./images/profil.jpg"
                 alt="Ahmet Yılmaz"
                 className="w-full h-full object-cover"
               />

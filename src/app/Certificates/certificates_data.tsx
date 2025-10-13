@@ -18,7 +18,7 @@ export const certificates: Certificate[] = [
     organization: "BTK Akademi",
     date: "12.09.2024",
     duration: "20 Saat",
-    image: "/images/certificates/google_flutter_ile_mobil_uygulama.png",
+    image: "./images/certificates/google_flutter_ile_mobil_uygulama.png",
     credentialUrl:
       "https://www.btkakademi.gov.tr/portal/certificate/validate?certificateId=VP1cJdjxDl",
     category: "mobile",
@@ -40,7 +40,7 @@ export const certificates: Certificate[] = [
     organization: "BTK Akademi",
     date: "28.08.2024",
     duration: "11 Saat",
-    image: "/images/certificates/dart_programlama.png",
+    image: "./images/certificates/dart_programlama.png",
     credentialUrl:
       "https://www.btkakademi.gov.tr/portal/certificate/validate?certificateId=2Nwc0W4ywA",
     category: "mobile",
@@ -60,7 +60,7 @@ export const certificates: Certificate[] = [
     organization: "BTK Akademi",
     date: "10.02.2025",
     duration: "14 Saat",
-    image: "/images/certificates/html5_ile_web_geliştirme.png",
+    image: "./images/certificates/html5_ile_web_geliştirme.png",
     credentialUrl:
       "https://www.btkakademi.gov.tr/portal/certificate/validate?certificateId=6mqFNMnj0g",
     category: "web",
@@ -83,7 +83,7 @@ export const certificates: Certificate[] = [
     organization: "BTK Akademi",
     date: "10.02.2025",
     duration: "10 Saat",
-    image: "/images/certificates/css_temelleri.png",
+    image: "./images/certificates/css_temelleri.png",
     credentialUrl:
       "https://www.btkakademi.gov.tr/portal/certificate/validate?certificateId=6mqFNMnj0g",
     category: "web",
@@ -106,7 +106,7 @@ export const certificates: Certificate[] = [
     organization: "BTK Akademi",
     date: "28.02.2025",
     duration: "26 Saat",
-    image: "/images/certificates/javascript_temelleri.png",
+    image: "./images/certificates/javascript_temelleri.png",
     credentialUrl:
       "https://www.btkakademi.gov.tr/portal/certificate/validate?certificateId=xr4t0eB2MA",
     category: "web",
@@ -130,7 +130,7 @@ export const certificates: Certificate[] = [
     organization: "BTK Akademi",
     date: "31.08.2024",
     duration: "4 Saat",
-    image: "/images/certificates/bilgi_teknolojilerine_giris.png",
+    image: "./images/certificates/bilgi_teknolojilerine_giris.png",
     credentialUrl:
       "https://www.btkakademi.gov.tr/portal/certificate/validate?certificateId=D2xh19XVBo",
     category: "bilisim",
@@ -149,7 +149,7 @@ export const certificates: Certificate[] = [
     organization: "BTK Akademi",
     date: "17.09.2024",
     duration: "1 Saat",
-    image: "/images/certificates/işletim_sistemlerine_giris.png",
+    image: "./images/certificates/işletim_sistemlerine_giris.png",
     credentialUrl:
       "https://www.btkakademi.gov.tr/portal/certificate/validate?certificateId=1kZComKAnz",
     category: "bilisim",
@@ -167,7 +167,7 @@ export const certificates: Certificate[] = [
     organization: "Toplum Gönülleri Vakfı",
     date: "20.09.2024",
     duration: "1 Saat",
-    image: "/images/certificates/yapay_zeka.png",
+    image: "./images/certificates/yapay_zeka.png",
     credentialUrl: "https://verified.sertifier.com/tr/verify/36082284064373/",
     category: "yapayzeka",
     skills: [
@@ -185,7 +185,7 @@ export const certificates: Certificate[] = [
     organization: "BTK Akademi",
     date: "19.08.2024",
     duration: "4 Saat",
-    image: "/images/certificates/siber_guvenlige_giris.png",
+    image: "./images/certificates/siber_guvenlige_giris.png",
     credentialUrl:
       "https://www.btkakademi.gov.tr/portal/certificate/validate?certificateId=EoPfbVp9aA",
     category: "siber",
@@ -205,7 +205,7 @@ export const certificates: Certificate[] = [
     organization: "BTK Akademi",
     date: "12.09.2024",
     duration: "2 Saat",
-    image: "/images/certificates/temel_ag_teknolojileri.png",
+    image: "./images/certificates/temel_ag_teknolojileri.png",
     credentialUrl:
       "https://www.btkakademi.gov.tr/portal/certificate/validate?certificateId=GoDfnqjrOV",
     category: "bilisim",
@@ -229,7 +229,7 @@ export const certificates: Certificate[] = [
     organization: "BTK Akademi",
     date: "29.04.2025",
     duration: "11 Saat",
-    image: "/images/certificates/csharp_programlama.png",
+    image: "./images/certificates/csharp_programlama.png",
     credentialUrl:
       "https://www.btkakademi.gov.tr/portal/certificate/validate?certificateId=OKMhqlkzKP",
     category: "desktop",
@@ -248,7 +248,7 @@ export const certificates: Certificate[] = [
     organization: "BTK Akademi",
     date: "18.09.2024",
     duration: "1 Saat",
-    image: "/images/certificates/proje_yonetim_temelleri.png",
+    image: "./images/certificates/proje_yonetim_temelleri.png",
     credentialUrl:
       "https://www.btkakademi.gov.tr/portal/certificate/validate?certificateId=eK1hyx1mNW",
     category: "kisiselgelisim",
@@ -267,7 +267,7 @@ export const certificates: Certificate[] = [
     organization: "BTK Akademi",
     date: "02.10.2024",
     duration: "1 Saat",
-    image: "/images/certificates/proje_cozme_teknikleri.png",
+    image: "./images/certificates/proje_cozme_teknikleri.png",
     credentialUrl:
       "https://www.btkakademi.gov.tr/portal/certificate/validate?certificateId=JoNfreNznJ",
     category: "kisiselgelisim",
@@ -286,7 +286,7 @@ export const certificates: Certificate[] = [
     organization: "BTK Akademi",
     date: "29.04.2025",
     duration: "1 Saat",
-    image: "/images/certificates/etkili_iletisim_stratejileri.png",
+    image: "./images/certificates/etkili_iletisim_stratejileri.png",
     credentialUrl:
       "https://www.btkakademi.gov.tr/portal/certificate/validate?certificateId=wmlFJP8pxq",
     category: "kisiselgelisim",
