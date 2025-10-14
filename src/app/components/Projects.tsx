@@ -255,170 +255,170 @@ export default function Projects() {
 
       {/* Modal - Güncellendi */}
       {selectedProject && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-xl p-4 transition-all duration-500"
-          onClick={closeProjectModal}
-        >
-          <div
-            className="relative w-full max-w-6xl bg-gradient-to-br from-[#0f1e32] via-[#132b4a] to-[#0a1829] rounded-3xl p-8 shadow-2xl border border-[#00C4FF]/20 overflow-hidden"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Arkaplan dekorasyon */}
-            <div className="absolute -top-32 -right-32 w-64 h-64 bg-[#00C4FF]/10 rounded-full blur-4xl animate-pulse"></div>
-            <div className="absolute -bottom-32 -left-32 w-64 h-64 bg-[#00FFB0]/10 rounded-full blur-4xl animate-pulse delay-1000"></div>
+  <div
+    className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-xl p-2 sm:p-4 transition-all duration-500 overflow-y-auto"
+    onClick={closeProjectModal}
+  >
+    <div
+      className="relative w-full max-w-2xl sm:max-w-6xl bg-gradient-to-br from-[#0f1e32] via-[#132b4a] to-[#0a1829] rounded-xl sm:rounded-3xl p-4 sm:p-8 shadow-2xl border border-[#00C4FF]/20 overflow-hidden my-auto"
+      onClick={(e) => e.stopPropagation()}
+    >
+      {/* Arkaplan dekorasyon */}
+      <div className="absolute -top-20 -right-20 sm:-top-32 sm:-right-32 w-40 h-40 sm:w-64 sm:h-64 bg-[#00C4FF]/10 rounded-full blur-2xl sm:blur-4xl animate-pulse"></div>
+      <div className="absolute -bottom-20 -left-20 sm:-bottom-32 sm:-left-32 w-40 h-40 sm:w-64 sm:h-64 bg-[#00FFB0]/10 rounded-full blur-2xl sm:blur-4xl animate-pulse delay-1000"></div>
 
-            {/* Kapatma butonu */}
-            <button
-              className="absolute top-6 right-6 z-10 w-10 h-10 flex items-center justify-center bg-red-500/20 hover:bg-red-500/30 backdrop-blur-sm rounded-xl border border-red-400/30 text-white hover:text-red-300 transition-all duration-300 group hover:scale-110 hover:rotate-90"
-              onClick={closeProjectModal}
-            >
-              <X size={20} className="transition-transform duration-300" />
-            </button>
+      {/* Kapatma butonu */}
+      <button
+        className="absolute top-4 right-4 sm:top-6 sm:right-6 z-10 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center bg-red-500/20 hover:bg-red-500/30 backdrop-blur-sm rounded-lg sm:rounded-xl border border-red-400/30 text-white hover:text-red-300 transition-all duration-300 group hover:scale-110 hover:rotate-90"
+        onClick={closeProjectModal}
+      >
+        <X size={18} className="sm:w-5 sm:h-5 transition-transform duration-300" />
+      </button>
 
-            {/* İçerik grid */}
-            <div className="relative z-10 grid xl:grid-cols-2 gap-8">
-              {/* Sol taraf - Geliştirildi */}
-              <div className="space-y-6">
-                <div className="relative group group">
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  <img
-                    src={selectedProject.image}
-                    alt={selectedProject.title}
-                    className="w-full h-80 object-cover rounded-2xl shadow-2xl group-hover:shadow-[#00C4FF]/30 transition-all duration-700 group-hover:scale-[1.02]"
-                  />
-                  <div className="absolute top-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <span className="text-white text-sm font-medium bg-black/70 backdrop-blur-sm px-4 py-2 rounded-xl border border-white/20 shadow-lg">
-                      🎯 {selectedProject.title}
-                    </span>
-                  </div>
-                </div>
+      {/* İçerik grid */}
+      <div className="relative z-10 grid lg:grid-cols-2 gap-4 sm:gap-8">
+        {/* Sol taraf - Geliştirildi */}
+        <div className="space-y-4 sm:space-y-6">
+          <div className="relative group">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <img
+              src={selectedProject.image}
+              alt={selectedProject.title}
+              className="w-full h-48 sm:h-80 object-cover rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl group-hover:shadow-[#00C4FF]/30 transition-all duration-700 group-hover:scale-[1.02]"
+            />
+            <div className="absolute top-3 left-3 sm:top-4 sm:left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              <span className="text-white text-xs sm:text-sm font-medium bg-black/70 backdrop-blur-sm px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg sm:rounded-xl border border-white/20 shadow-lg">
+                🎯 {selectedProject.title}
+              </span>
+            </div>
+          </div>
 
-                {/* Teknoloji etiketleri - Geliştirildi */}
-                <div className="bg-black/30 backdrop-blur-lg rounded-2xl p-6 border border-white/10 shadow-xl">
-                  <h4 className="text-white font-bold mb-4 text-lg flex items-center gap-2">
-                    <div className="w-2 h-2 bg-[#00C4FF] rounded-full animate-pulse"></div>
-                    KULLANILANLAR
-                  </h4>
-                  <div className="flex flex-wrap gap-3">
-                    {selectedProject.technologies.map(
-                      (tech: string, i: number) => (
-                        <span
-                          key={i}
-                          className="text-sm px-4 py-2 bg-gradient-to-r from-[#00C4FF]/10 to-[#00FFB0]/10 border border-[#00C4FF]/30 rounded-xl text-[#00C4FF] font-semibold backdrop-blur-sm hover:scale-105 hover:bg-[#00C4FF]/20 transition-all duration-300 cursor-default shadow-lg"
-                        >
-                          {tech}
-                        </span>
-                      )
-                    )}
-                  </div>
-                </div>
-              </div>
-
-              {/* Sağ taraf - Geliştirildi */}
-              <div className="space-y-6">
-                {/* Başlık ve Açıklama */}
-                <div className="space-y-6">
-                  <div>
-                    <h3 className="text-4xl font-bold text-white mb-4 leading-tight bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                      {selectedProject.title}
-                    </h3>
-
-                    <div className="h-1 bg-gradient-to-r from-[#00C4FF] to-[#00FFB0] rounded-full mb-6 shadow-lg"></div>
-
-                    <p className="text-gray-200 leading-relaxed text-lg">
-                      {selectedProject.description}
-                    </p>
-                  </div>
-                </div>
-
-                {/* İstatistikler - Geliştirildi */}
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-black/40 backdrop-blur-lg rounded-2xl p-6 text-center border border-[#00C4FF]/20 hover:border-[#00C4FF]/40 transition-all duration-500 hover:scale-105 group">
-                    <div className="text-3xl font-bold text-[#00C4FF] mb-2 group-hover:scale-110 transition-transform duration-300">
-                      {selectedProject.technologies.length}+
-                    </div>
-                    <div className="text-sm text-gray-300 uppercase tracking-wider font-semibold">
-                      PAKET
-                    </div>
-                  </div>
-                  <div className="bg-black/40 backdrop-blur-lg rounded-2xl p-6 text-center border border-[#00FFB0]/20 hover:border-[#00FFB0]/40 transition-all duration-500 hover:scale-105 group">
-                    <div className="text-3xl font-bold text-[#00FFB0] mb-2 group-hover:scale-110 transition-transform duration-300">
-                      {selectedProject.features?.length || "10+"}
-                    </div>
-                    <div className="text-sm text-gray-300 uppercase tracking-wider font-semibold">
-                      Özellik
-                    </div>
-                  </div>
-                </div>
-
-                {/* Butonlar - Geliştirildi */}
-                <div className="flex flex-col sm:flex-row gap-4 pt-6">
-                  <a
-                    href={selectedProject.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-3 bg-black/40 hover:bg-black/60 backdrop-blur-lg text-white px-8 py-4 rounded-2xl border border-white/20 hover:border-[#00C4FF]/40 hover:scale-105 transition-all duration-500 group flex-1 shadow-lg"
+          {/* Teknoloji etiketleri - Geliştirildi */}
+          <div className="bg-black/30 backdrop-blur-lg rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-white/10 shadow-lg sm:shadow-xl">
+            <h4 className="text-white font-bold mb-3 sm:mb-4 text-base sm:text-lg flex items-center gap-2">
+              <div className="w-2 h-2 bg-[#00C4FF] rounded-full animate-pulse"></div>
+              KULLANILANLAR
+            </h4>
+            <div className="flex flex-wrap gap-2 sm:gap-3">
+              {selectedProject.technologies.map(
+                (tech: string, i: number) => (
+                  <span
+                    key={i}
+                    className="text-xs sm:text-sm px-3 py-1.5 sm:px-4 sm:py-2 bg-gradient-to-r from-[#00C4FF]/10 to-[#00FFB0]/10 border border-[#00C4FF]/30 rounded-lg sm:rounded-xl text-[#00C4FF] font-semibold backdrop-blur-sm hover:scale-105 hover:bg-[#00C4FF]/20 transition-all duration-300 cursor-default shadow-lg"
                   >
-                    <Github
-                      size={22}
-                      className="group-hover:scale-110 group-hover:text-[#00C4FF] transition-all duration-300"
-                    />
-                    <span className="font-semibold">GitHub'da Gör</span>
-                  </a>
-                  <button
-                    onClick={() => setShowVideo(true)}
-                    className="flex items-center justify-center gap-3 bg-gradient-to-r from-[#00C4FF] to-[#00FFB0] hover:from-[#00FFB0] hover:to-[#00C4FF] text-[#0a1a2f] font-bold px-8 py-4 rounded-2xl shadow-2xl hover:shadow-3xl hover:scale-105 transition-all duration-500 group flex-1"
-                  >
-                    <span>🎬 Demo Videosu</span>
-                  </button>
-                </div>
-
-                {/* Ek bilgi */}
-                <div className="text-center pt-4">
-                  <p className="text-gray-400 text-sm">
-                    💡 Proje detaylarını incelemek için bağlantıları kullanın
-                  </p>
-                </div>
-              </div>
+                    {tech}
+                  </span>
+                )
+              )}
             </div>
           </div>
         </div>
-      )}
 
-      {/* Video Modal - Geliştirildi */}
-      {showVideo && (
-        <div
-          className="fixed inset-0 bg-black/95 backdrop-blur-2xl flex items-center justify-center z-[60] p-4 transition-all duration-500"
-          onClick={closeVideoModal}
-        >
-          <div
-            className="relative bg-gradient-to-br from-[#0a1a2f] to-[#132b4a] rounded-3xl overflow-hidden shadow-2xl w-full max-w-5xl border border-[#00C4FF]/20"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              onClick={closeVideoModal}
-              className="absolute top-6 right-6 z-10 w-12 h-12 flex items-center justify-center bg-red-500/20 hover:bg-red-500/30 backdrop-blur-sm rounded-xl border border-red-400/30 text-white hover:text-red-300 transition-all duration-300 hover:scale-110 hover:rotate-90"
-            >
-              <X size={24} />
-            </button>
+        {/* Sağ taraf - Geliştirildi */}
+        <div className="space-y-4 sm:space-y-6">
+          {/* Başlık ve Açıklama */}
+          <div className="space-y-4 sm:space-y-6">
+            <div>
+              <h3 className="text-2xl sm:text-4xl font-bold text-white mb-3 sm:mb-4 leading-tight bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                {selectedProject.title}
+              </h3>
 
-            <div className="p-2">
-              <video
-                src={selectedProject.live}
-                controls
-                autoPlay
-                className="w-full h-[70vh] object-contain rounded-b-2xl"
-              />
-            </div>
+              <div className="h-1 bg-gradient-to-r from-[#00C4FF] to-[#00FFB0] rounded-full mb-4 sm:mb-6 shadow-lg"></div>
 
-            <div className="absolute bottom-4 left-4 bg-black/50 backdrop-blur-sm px-4 py-2 rounded-xl border border-white/20">
-              <p className="text-white text-sm font-medium">
-                🎥 {selectedProject.title} - Demo Videosu
+              <p className="text-gray-200 leading-relaxed text-sm sm:text-lg">
+                {selectedProject.description}
               </p>
             </div>
           </div>
+
+          {/* İstatistikler - Geliştirildi */}
+          <div className="grid grid-cols-2 gap-3 sm:gap-4">
+            <div className="bg-black/40 backdrop-blur-lg rounded-xl sm:rounded-2xl p-4 sm:p-6 text-center border border-[#00C4FF]/20 hover:border-[#00C4FF]/40 transition-all duration-500 hover:scale-105 group">
+              <div className="text-xl sm:text-3xl font-bold text-[#00C4FF] mb-1 sm:mb-2 group-hover:scale-110 transition-transform duration-300">
+                {selectedProject.technologies.length}+
+              </div>
+              <div className="text-xs sm:text-sm text-gray-300 uppercase tracking-wider font-semibold">
+                PAKET
+              </div>
+            </div>
+            <div className="bg-black/40 backdrop-blur-lg rounded-xl sm:rounded-2xl p-4 sm:p-6 text-center border border-[#00FFB0]/20 hover:border-[#00FFB0]/40 transition-all duration-500 hover:scale-105 group">
+              <div className="text-xl sm:text-3xl font-bold text-[#00FFB0] mb-1 sm:mb-2 group-hover:scale-110 transition-transform duration-300">
+                {selectedProject.features?.length || "10+"}
+              </div>
+              <div className="text-xs sm:text-sm text-gray-300 uppercase tracking-wider font-semibold">
+                Özellik
+              </div>
+            </div>
+          </div>
+
+          {/* Butonlar - Geliştirildi */}
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4 sm:pt-6">
+            <a
+              href={selectedProject.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 sm:gap-3 bg-black/40 hover:bg-black/60 backdrop-blur-lg text-white px-4 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl border border-white/20 hover:border-[#00C4FF]/40 hover:scale-105 transition-all duration-500 group flex-1 shadow-lg"
+            >
+              <Github
+                size={18}
+                className="sm:w-5 sm:h-5 group-hover:scale-110 group-hover:text-[#00C4FF] transition-all duration-300"
+              />
+              <span className="font-semibold text-sm sm:text-base">GitHub'da Gör</span>
+            </a>
+            <button
+              onClick={() => setShowVideo(true)}
+              className="flex items-center justify-center gap-2 sm:gap-3 bg-gradient-to-r from-[#00C4FF] to-[#00FFB0] hover:from-[#00FFB0] hover:to-[#00C4FF] text-[#0a1a2f] font-bold px-4 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl shadow-lg sm:shadow-2xl hover:shadow-3xl hover:scale-105 transition-all duration-500 group flex-1"
+            >
+              <span className="text-sm sm:text-base">🎬 Demo Videosu</span>
+            </button>
+          </div>
+
+          {/* Ek bilgi */}
+          <div className="text-center pt-3 sm:pt-4">
+            <p className="text-gray-400 text-xs sm:text-sm">
+              💡 Proje detaylarını incelemek için bağlantıları kullanın
+            </p>
+          </div>
         </div>
-      )}
+      </div>
+    </div>
+  </div>
+)}
+
+{/* Video Modal - Geliştirildi */}
+{showVideo && (
+  <div
+    className="fixed inset-0 bg-black/95 backdrop-blur-2xl flex items-center justify-center z-[60] p-2 sm:p-4 transition-all duration-500 overflow-y-auto"
+    onClick={closeVideoModal}
+  >
+    <div
+      className="relative bg-gradient-to-br from-[#0a1a2f] to-[#132b4a] rounded-xl sm:rounded-3xl overflow-hidden shadow-2xl w-full max-w-2xl sm:max-w-5xl border border-[#00C4FF]/20 my-auto"
+      onClick={(e) => e.stopPropagation()}
+    >
+      <button
+        onClick={closeVideoModal}
+        className="absolute top-4 right-4 sm:top-6 sm:right-6 z-10 w-8 h-8 sm:w-12 sm:h-12 flex items-center justify-center bg-red-500/20 hover:bg-red-500/30 backdrop-blur-sm rounded-lg sm:rounded-xl border border-red-400/30 text-white hover:text-red-300 transition-all duration-300 hover:scale-110 hover:rotate-90"
+      >
+        <X size={18} className="sm:w-6 sm:h-6" />
+      </button>
+
+      <div className="p-2 sm:p-4">
+        <video
+          src={selectedProject.live}
+          controls
+          autoPlay
+          className="w-full h-auto max-h-[50vh] sm:h-[70vh] object-contain rounded-lg sm:rounded-2xl"
+        />
+      </div>
+
+      <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 bg-black/50 backdrop-blur-sm px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg sm:rounded-xl border border-white/20">
+        <p className="text-white text-xs sm:text-sm font-medium">
+          🎥 {selectedProject.title} - Demo Videosu
+        </p>
+      </div>
+    </div>
+  </div>
+)}
     </section>
   );
 }
