@@ -1,20 +1,25 @@
 import "./globals.css";
 import type { Metadata } from "next";
 
+// GitHub Pages URL'sini doğru alalım
+const baseUrl = "https://ahmetyilmazz.github.io";
+const ogImageUrl = `${baseUrl}/open_graph_image.png`;
+
 export const metadata: Metadata = {
   title: "Ahmet YILMAZ | Flutter Developer",
   description: "Ahmet YILMAZ Portfolio",
+  metadataBase: new URL(baseUrl),
   openGraph: {
-    title: "Ahmet YILMAZ| Flutter Developer",
+    title: "Ahmet YILMAZ | Flutter Developer",
     description: "Ahmet YILMAZ Portfolio",
-    url: "https://ahmetyilmazz.github.io/",
+    url: baseUrl,
     siteName: "Ahmet Portfolio",
     images: [
       {
-        url: "https://ahmetyilmazz.github.io/open_graph_image.png",
+        url: ogImageUrl,
         width: 1200,
         height: 630,
-        alt: "Ahmet Portfolio",
+        alt: "Ahmet - Flutter Developer Portfolio",
       },
     ],
     locale: "tr_TR",
