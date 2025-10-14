@@ -2,11 +2,11 @@ import "./globals.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Ahmet Yılmaz | Flutter Developer",
-  description: "Ahmet Yılmaz Portfolio",
+  title: "Ahmet YILMAZ | Flutter Developer",
+  description: "Ahmet YILMAZ Portfolio",
   openGraph: {
-    title: "Ahmet | Flutter Developer",
-    description: "Ahmet Portfolio",
+    title: "Ahmet YILMAZ| Flutter Developer",
+    description: "Ahmet YILMAZ Portfolio",
     url: "https://ahmetyilmazz.github.io/",
     siteName: "Ahmet Portfolio",
     images: [
