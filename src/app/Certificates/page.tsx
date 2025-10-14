@@ -265,131 +265,139 @@ export default function Certificates() {
 
       {/* Sertifika Detay Modal */}
       {selectedCertificate && (
-  <div
-    className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-xl p-2 sm:p-4 overflow-y-auto"
-    onClick={handleBackdropClick}
-  >
-    <div
-      className="relative w-full max-w-2xl sm:max-w-4xl bg-gradient-to-br from-[#0f1e32] via-[#132b4a] to-[#0a1829] rounded-xl sm:rounded-3xl p-4 sm:p-6 shadow-2xl border border-[#00C4FF]/20 overflow-hidden flex flex-col gap-4 sm:gap-6"
-      onClick={(e) => e.stopPropagation()}
-    >
-      {/* Arkaplan dekorasyon */}
-      <div className="absolute -top-20 -right-20 sm:-top-24 sm:-right-24 w-40 h-40 sm:w-48 sm:h-48 bg-[#00C4FF]/10 rounded-full blur-2xl sm:blur-3xl"></div>
-      <div className="absolute -bottom-20 -left-20 sm:-bottom-24 sm:-left-24 w-40 h-40 sm:w-48 sm:h-48 bg-[#00FFB0]/10 rounded-full blur-2xl sm:blur-3xl"></div>
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-xl p-2 sm:p-4 transition-all duration-500 overflow-y-auto"
+          onClick={handleBackdropClick}
+        >
+          <div
+            className="relative w-full max-w-2xl sm:max-w-6xl bg-gradient-to-br from-[#0f1e32] via-[#132b4a] to-[#0a1829] rounded-xl sm:rounded-3xl p-4 sm:p-8 shadow-2xl border border-[#00C4FF]/20 overflow-hidden my-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Arkaplan dekorasyon */}
+            <div className="absolute -top-20 -right-20 sm:-top-32 sm:-right-32 w-40 h-40 sm:w-64 sm:h-64 bg-[#00C4FF]/10 rounded-full blur-2xl sm:blur-4xl animate-pulse"></div>
+            <div className="absolute -bottom-20 -left-20 sm:-bottom-32 sm:-left-32 w-40 h-40 sm:w-64 sm:h-64 bg-[#00FFB0]/10 rounded-full blur-2xl sm:blur-4xl animate-pulse delay-1000"></div>
 
-      {/* Kapatma butonu */}
-      <button
-        className="absolute top-3 right-3 sm:top-4 sm:right-4 z-10 w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center bg-red-500/20 hover:bg-red-500/30 backdrop-blur-sm rounded-lg sm:rounded-xl border border-red-400/30 text-white hover:text-red-300 transition-all duration-300 group hover:scale-110 hover:rotate-90"
-        onClick={closeModal}
-        aria-label="Modalı kapat"
-      >
-        <X size={16} className="sm:w-4 sm:h-4" />
-      </button>
-
-      <div className="relative z-10 grid lg:grid-cols-2 gap-4 sm:gap-6">
-        {/* Sol taraf - Görsel */}
-        <div className="space-y-3 sm:space-y-4">
-          <div className="relative group">
-            <img
-              src={selectedCertificate.image}
-              alt={selectedCertificate.title}
-              className="w-full h-40 sm:h-48 object-cover rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl"
-            />
-          </div>
-
-          {/* İstatistikler */}
-          <div className="grid grid-cols-2 gap-3">
-            <div className="bg-black/30 backdrop-blur-sm rounded-xl sm:rounded-2xl p-3 text-center border border-white/10">
-              <Calendar
-                size={16}
-                className="mx-auto text-[#00C4FF] mb-1 sm:mb-2"
-              />
-              <div className="text-xs text-gray-400">Yıl</div>
-              <div className="text-white font-bold text-sm">
-                {selectedCertificate.date}
-              </div>
-            </div>
-            <div className="bg-black/30 backdrop-blur-sm rounded-xl sm:rounded-2xl p-3 text-center border border-white/10">
-              <Clock
-                size={16}
-                className="mx-auto text-[#00FFB0] mb-1 sm:mb-2"
-              />
-              <div className="text-xs text-gray-400">Süre</div>
-              <div className="text-white font-bold text-sm">
-                {selectedCertificate.duration}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Sağ taraf - İçerik */}
-        <div className="space-y-3 sm:space-y-4">
-          <div>
-            <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 sm:mb-3">
-              {selectedCertificate.title}
-            </h3>
-
-            <div className="flex items-center gap-2 mb-3">
-              <Award size={18} className="text-[#00FFB0]" />
-              <span className="text-sm sm:text-base text-gray-300 font-semibold">
-                {selectedCertificate.organization}
-              </span>
-            </div>
-
-            <div className="h-1 bg-gradient-to-r from-[#00C4FF] to-[#00FFB0] rounded-full mb-3 sm:mb-4"></div>
-
-            <p className="text-gray-200 text-sm leading-relaxed mb-3 sm:mb-4">
-              {selectedCertificate.description}
-            </p>
-          </div>
-
-          {/* Teknolojiler */}
-          <div>
-            <h4 className="text-white font-semibold mb-2 text-sm">
-              Kazanılan Yetkinlikler:
-            </h4>
-            <div className="flex flex-wrap gap-1.5">
-              {selectedCertificate.skills.map(
-                (skill: string, index: number) => (
-                  <span
-                    key={index}
-                    className="text-xs px-2.5 py-1 sm:px-3 sm:py-1.5 bg-gradient-to-r from-[#00C4FF]/10 to-[#00FFB0]/10 border border-[#00C4FF]/30 rounded-lg sm:rounded-xl text-[#00C4FF] font-medium"
-                  >
-                    {skill}
-                  </span>
-                )
-              )}
-            </div>
-          </div>
-
-          {/* Butonlar */}
-          <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 pt-3 sm:pt-4">
-            <a
-              href={selectedCertificate.credentialUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 bg-gradient-to-r from-[#00C4FF] to-[#00FFB0] hover:from-[#00FFB0] hover:to-[#00C4FF] text-[#0a1a2f] font-bold text-sm px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 group flex-1"
+            {/* Kapatma butonu */}
+            <button
+              className="absolute top-4 right-4 sm:top-6 sm:right-6 z-20 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center bg-red-500/20 hover:bg-red-500/30 backdrop-blur-sm rounded-lg sm:rounded-xl border border-red-400/30 text-white hover:text-red-300 transition-all duration-300 group hover:scale-110 hover:rotate-90"
+              onClick={closeModal}
+              aria-label="Modalı kapat"
             >
-              <ExternalLink
-                size={16}
-                className="group-hover:scale-110 transition-transform"
+              <X
+                size={18}
+                className="sm:w-5 sm:h-5 transition-transform duration-300"
               />
-              <span>Doğrula</span>
-            </a>
-          </div>
+            </button>
 
-          {/* Kısayol bilgisi */}
-          <div className="text-center pt-2">
-            <p className="text-gray-400 text-xs">
-              💡 ESC tuşuna basarak veya dışarı tıklayarak
-              kapatabilirsiniz
-            </p>
+            <div className="relative z-10 grid lg:grid-cols-2 gap-4 sm:gap-8">
+              {/* Sol taraf - Görsel */}
+              <div className="space-y-4 sm:space-y-6">
+                <div className="relative group">
+                  <img
+                    src={selectedCertificate.image}
+                    alt={selectedCertificate.title}
+                    className="w-full h-48 sm:h-80 object-cover rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl"
+                  />
+                </div>
+
+                {/* İstatistikler */}
+                <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                  <div className="bg-black/40 backdrop-blur-lg rounded-xl sm:rounded-2xl p-4 sm:p-6 text-center border border-[#00C4FF]/20 hover:border-[#00C4FF]/40 transition-all duration-500 hover:scale-105 group">
+                    <Calendar
+                      size={20}
+                      className="mx-auto text-[#00C4FF] mb-2 sm:mb-3 group-hover:scale-110 transition-transform duration-300"
+                    />
+                    <div className="text-xs sm:text-sm text-gray-300 uppercase tracking-wider font-semibold">
+                      YIL
+                    </div>
+                    <div className="text-white font-bold text-lg sm:text-xl mt-1">
+                      {selectedCertificate.date}
+                    </div>
+                  </div>
+                  <div className="bg-black/40 backdrop-blur-lg rounded-xl sm:rounded-2xl p-4 sm:p-6 text-center border border-[#00FFB0]/20 hover:border-[#00FFB0]/40 transition-all duration-500 hover:scale-105 group">
+                    <Clock
+                      size={20}
+                      className="mx-auto text-[#00FFB0] mb-2 sm:mb-3 group-hover:scale-110 transition-transform duration-300"
+                    />
+                    <div className="text-xs sm:text-sm text-gray-300 uppercase tracking-wider font-semibold">
+                      SÜRE
+                    </div>
+                    <div className="text-white font-bold text-lg sm:text-xl mt-1">
+                      {selectedCertificate.duration}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Sağ taraf - İçerik */}
+              <div className="space-y-4 sm:space-y-6">
+                <div>
+                  <h3 className="text-2xl sm:text-4xl font-bold text-white mb-3 sm:mb-4 leading-tight bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                    {selectedCertificate.title}
+                  </h3>
+
+                  <div className="flex items-center gap-2 mb-3 sm:mb-4">
+                    <Award size={20} className="text-[#00FFB0]" />
+                    <span className="text-base sm:text-lg text-gray-300 font-semibold">
+                      {selectedCertificate.organization}
+                    </span>
+                  </div>
+
+                  <div className="h-1 bg-gradient-to-r from-[#00C4FF] to-[#00FFB0] rounded-full mb-4 sm:mb-6 shadow-lg"></div>
+
+                  <p className="text-gray-200 leading-relaxed text-sm sm:text-lg">
+                    {selectedCertificate.description}
+                  </p>
+                </div>
+
+                {/* Teknolojiler */}
+                <div className="bg-black/30 backdrop-blur-lg rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-white/10 shadow-lg sm:shadow-xl">
+                  <h4 className="text-white font-bold mb-3 sm:mb-4 text-base sm:text-lg flex items-center gap-2">
+                    <div className="w-2 h-2 bg-[#00FFB0] rounded-full animate-pulse"></div>
+                    KAZANILAN YETKİNLİKLER
+                  </h4>
+                  <div className="flex flex-wrap gap-2 sm:gap-3">
+                    {selectedCertificate.skills.map(
+                      (skill: string, index: number) => (
+                        <span
+                          key={index}
+                          className="text-xs sm:text-sm px-3 py-1.5 sm:px-4 sm:py-2 bg-gradient-to-r from-[#00C4FF]/10 to-[#00FFB0]/10 border border-[#00C4FF]/30 rounded-lg sm:rounded-xl text-[#00C4FF] font-semibold backdrop-blur-sm hover:scale-105 hover:bg-[#00C4FF]/20 transition-all duration-300 cursor-default shadow-lg"
+                        >
+                          {skill}
+                        </span>
+                      )
+                    )}
+                  </div>
+                </div>
+
+                {/* Butonlar */}
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4 sm:pt-6">
+                  <a
+                    href={selectedCertificate.credentialUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 sm:gap-3 bg-gradient-to-r from-[#00C4FF] to-[#00FFB0] hover:from-[#00FFB0] hover:to-[#00C4FF] text-[#0a1a2f] font-bold px-4 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl shadow-lg sm:shadow-2xl hover:shadow-3xl hover:scale-105 transition-all duration-500 group flex-1"
+                  >
+                    <ExternalLink
+                      size={18}
+                      className="sm:w-5 sm:h-5 group-hover:scale-110 transition-transform duration-300"
+                    />
+                    <span className="text-sm sm:text-base">Doğrula</span>
+                  </a>
+                </div>
+
+                {/* Kısayol bilgisi */}
+                <div className="text-center pt-3 sm:pt-4">
+                  <p className="text-gray-400 text-xs sm:text-sm">
+                    💡 ESC tuşuna basarak veya dışarı tıklayarak
+                    kapatabilirsiniz
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-)}
+      )}
     </section>
   );
 }
