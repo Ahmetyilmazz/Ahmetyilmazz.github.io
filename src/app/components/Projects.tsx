@@ -10,6 +10,26 @@ export default function Projects() {
 
   const projects = [
     {
+      title: "Mesajlaşma Uygulaması - Muhabbet",
+      description:
+        'Üniversite yıllarımda sürekli "Acaba arkadaşlar arasında kendi mesajlaşma uygulamamızı geliştirebilsek nasıl olur ?" diye düşünürdüm. Matematik dersleri (Diferansiyel Denklemler, Topoloji, Kısmi Diferansiyel Denklemler, Soyut Cebir...) yüzünden bir türlü fırsat bulamamıştım. Flutter yolculuğuma devam ederken bu fikir tekrar aklıma geldi ve kolları sıvadım. Sonuç; Küçük yaş kitlesi için güvenli ve keyifli bir mesajlaşma uygulaması! Avatar seçimi ve takma ad ile bu süreçler daha keyifli ve dikkat çekici oldu.',
+      technologies: [
+        "Flutter",
+        "Firebase",
+        "flutter_webrtc",
+        "flutter_sound ",
+        "provider",
+        "image_picker",
+        "video_player",
+        "emoji_picker_flutter",
+        "image_gallery_saver_plus",
+      ],
+      github: "https://github.com/Ahmetyilmazz/Mesajlasma-Uygulamasi",
+      live: "/",
+      image: "./images/chatApp.png",
+    },
+
+    {
       title: "English Learn",
       description:
         "İngilizce öğrenirken en büyük zorluklardan biri düzenli tekrar yapmaktı. Bu ihtiyacı çözmek için Flutter ile kendi İngilizce Kart Uygulamamı geliştirdim.",
@@ -22,6 +42,40 @@ export default function Projects() {
       github: "https://github.com/Ahmetyilmazz/English-Learn",
       live: "./videos/english_word.mp4",
       image: "./images/english_learn.png",
+    },
+    {
+      title: "Görevlerim - Tablet",
+      description:
+        "Bu uygulama, ailelerin çocuklarının günlük, haftalık ve aylık görevlerini eğlenceli bir şekilde takip edebilmesini sağlar. Ebeveynler çocuklarına görevler atayabilir, çocuklar da bu görevleri tamamladıkça puan veya rozet kazanarak motive olurlar. Oyunlaştırma ve animasyon desteğiyle çocukların sorumluluk bilincini geliştirirken ebeveynlerle etkileşimli bir deneyim sunar.",
+      technologies: [
+        "Flutter",
+        "sqflite",
+        "path",
+        "image_picker",
+        "shared_preferences",
+        "geolocator",
+        "confetti",
+        "lottie",
+        "http",
+        "provider",
+      ],
+      github: "https://github.com/Ahmetyilmazz/Gorevlerim",
+      live: "/",
+      image: "./images/cocuk_takip.png",
+    },
+    {
+      title: "Servis Takip Yazılımı",
+      description:
+        "Kullanıcıların ürünleri kolayca eklemesine, güncellemesine ve yönetmesine olanak tanıyan ve aynı zamanda satış süreçlerini verimli bir şekilde takip eden bir uygulama oluşturmaktı. Kullanıcı dostu arayüz ve görsel özelleştirmeler kullanıcı deneyimini iyileştirmek için tasarlandı.",
+      technologies: [
+        "Flutter",
+        "Firebase Authentication",
+        "Firebase Firestore",
+        "API Integration",
+      ],
+      github: "https://github.com/Ahmetyilmazz/ServisTakip",
+      live: "./videos/servis_takip.mp4",
+      image: "./images/servis_takip.png",
     },
     {
       title: "Otoyol Rehberim",
@@ -41,20 +95,6 @@ export default function Projects() {
       github: "https://github.com/Ahmetyilmazz/Otoyol-Rehberi",
       live: "./videos/otoyol_rehberim.mp4",
       image: "./images/otoyol_rehberim.png",
-    },
-    {
-      title: "Servis Takip Yazılımı",
-      description:
-        "Kullanıcıların ürünleri kolayca eklemesine, güncellemesine ve yönetmesine olanak tanıyan ve aynı zamanda satış süreçlerini verimli bir şekilde takip eden bir uygulama oluşturmaktı. Kullanıcı dostu arayüz ve görsel özelleştirmeler kullanıcı deneyimini iyileştirmek için tasarlandı.",
-      technologies: [
-        "Flutter",
-        "Firebase Authentication",
-        "Firebase Firestore",
-        "API Integration",
-      ],
-      github: "https://github.com/Ahmetyilmazz/ServisTakip",
-      live: "./videos/servis_takip.mp4",
-      image: "./images/servis_takip.png",
     },
     {
       title: "Takım Uygulaması",
@@ -81,26 +121,6 @@ export default function Projects() {
       github: "https://github.com/Ahmetyilmazz/Instant_Location_Tracking",
       live: "/",
       image: "./images/anlik_konum.png",
-    },
-    {
-      title: "Görevlerim - Tablet",
-      description:
-        "Bu uygulama, ailelerin çocuklarının günlük, haftalık ve aylık görevlerini eğlenceli bir şekilde takip edebilmesini sağlar. Ebeveynler çocuklarına görevler atayabilir, çocuklar da bu görevleri tamamladıkça puan veya rozet kazanarak motive olurlar. Oyunlaştırma ve animasyon desteğiyle çocukların sorumluluk bilincini geliştirirken ebeveynlerle etkileşimli bir deneyim sunar.",
-      technologies: [
-        "Flutter",
-        "sqflite",
-        "path",
-        "image_picker",
-        "shared_preferences",
-        "geolocator",
-        "confetti",
-        "lottie",
-        "http",
-        "provider",
-      ],
-      github: "https://github.com/Ahmetyilmazz/Gorevlerim",
-      live: "/",
-      image: "./images/cocuk_takip.png",
     },
   ];
 
