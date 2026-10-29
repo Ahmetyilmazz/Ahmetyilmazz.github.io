@@ -31,6 +31,8 @@ export default function LanguageSwitcher({ locale, label }: LanguageSwitcherProp
   return (
     <Link
       href={href}
+      // Diğer dildeki sayfa önceden yüklenmez; yüklenirse o dilin görselleri de boşuna indiriliyordu.
+      prefetch={false}
       hrefLang={target}
       aria-label={label}
       title={label}

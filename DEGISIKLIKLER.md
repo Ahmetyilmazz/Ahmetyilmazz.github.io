@@ -305,6 +305,22 @@
 
 **Doğrulama**: Canlı sitede `curl` ile `/` 200, `/tr` 200, `/tr/` 404 olduğu görüldü (teşhis). Düzeltmenin canlı doğrulaması push sonrası yapılacak.
 
+## 2026-10-29 — Yayın sonrası canlı kontrol ve küçük performans düzeltmesi
+
+**Canlı kontrol (force push sonrası)**
+- 16 sayfanın tamamı 200; olmayan adres 404; `/tr` → `/tr/` yönlendirmesi; og.png, sitemap, robots, favicon, görseller ve video erişilebilir.
+- `app-ads.txt` push öncesiyle aynı yanıtı veriyor (AdMob etkilenmedi).
+- Gerçek sekmede, canlı adreste: menüden bölüme gidip dil değiştirme, elle kaydırma, telefon menüsü ve proje sayfalarında dil değişimi doğru çalışıyor; JavaScript hatası yok.
+- GitHub'daki geçmişte tüm commit'lerin yazarı Ahmet YILMAZ; yerel yedek dal silindi.
+
+**Düzeltme**: Dil düğmesi, hedef sayfayı önceden yüklerken diğer dildeki kapak görsellerini de boşuna indiriyordu; bu düğme için önceden yükleme (`prefetch`) kapatıldı.
+
+**Dosyalar**: `src/components/layout/LanguageSwitcher.tsx`
+
+**Doğrulama**: Gerçek sekmede TR Görevlerim sayfasında EN görselin artık indirilmediği ve dil değişimi senaryolarının hâlâ doğru çalıştığı görüldü.
+
+**Not**: Localhost'taki `serve` sunucusu `$` içeren Next.js dosya adlarını (ör. `__next.$d$locale…txt`) 404 ile döndürüyor; canlıda bu dosyalar 200, sorun yalnızca yerel test sunucusunda.
+
 ## Açık kalan işler
 - Demo videoları (~100 MB) sıkıştırılmalı; bilgisayarda `ffmpeg` yok.
 - GoatCounter ziyaretçi sayacı (kullanıcının site kodu bekleniyor).
