@@ -8,6 +8,7 @@ export const site = {
   socials: {
     github: "https://github.com/Ahmetyilmazz",
     linkedin: "https://www.linkedin.com/in/ahmeeet/",
+    googlePlay: "https://play.google.com/store/apps/developer?id=Ahmet+YIILMAZ",
   },
   ogImage: "/open_graph_image.png",
 } as const;

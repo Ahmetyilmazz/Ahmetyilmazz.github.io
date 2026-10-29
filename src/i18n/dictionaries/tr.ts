@@ -5,6 +5,7 @@ export const tr = {
       "Flutter ile mobil, web ve masaüstü uygulamalar geliştiren yazılım geliştirici Ahmet YILMAZ'ın portföyü.",
   },
   nav: {
+    apps: "Uygulamalar",
     services: "Hizmetler",
     projects: "Projeler",
     about: "Hakkımda",
@@ -23,7 +24,15 @@ export const tr = {
     lead: "Ben Ahmet, Flutter geliştiricisiyim. Mesajlaşmadan anlık konum takibine kadar mobil, web ve masaüstü uygulamaları uçtan uca tasarlayıp geliştiriyorum.",
     primaryCta: "Projeleri incele",
     secondaryCta: "Benimle çalış",
-    stats: { projects: "Proje", certificates: "Sertifika" },
+    stats: { projects: "Proje", published: "Google Play'de", certificates: "Sertifika" },
+  },
+  apps: {
+    eyebrow: "Google Play'de yayında",
+    title: "Kullanıcılara ulaşan uygulamalarım",
+    intro: "Fikirden mağaza yayınına kadar geliştirdiğim ve şu an indirilebilen uygulamalar.",
+    open: "Google Play'de aç",
+    all: "Geliştirici sayfası",
+    categories: { game: "Oyun", education: "Eğitim" },
   },
   services: {
     eyebrow: "Hizmetler",

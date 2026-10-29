@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin } from "react-icons/fa6";
+import { FaGithub, FaGooglePlay, FaLinkedin } from "react-icons/fa6";
 import { Mail } from "lucide-react";
 import type { Dictionary } from "@/i18n";
 import { site } from "@/content/site";
@@ -7,6 +7,7 @@ import Container from "@/components/ui/Container";
 const socialLinks = [
   { href: site.socials.github, label: "GitHub", icon: FaGithub },
   { href: site.socials.linkedin, label: "LinkedIn", icon: FaLinkedin },
+  { href: site.socials.googlePlay, label: "Google Play", icon: FaGooglePlay },
   { href: `mailto:${site.email}`, label: "E-mail", icon: Mail },
 ];
 

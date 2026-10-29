@@ -7,6 +7,7 @@ export const en: Dictionary = {
       "Portfolio of Ahmet YILMAZ, a software developer building mobile, web and desktop apps with Flutter.",
   },
   nav: {
+    apps: "Apps",
     services: "Services",
     projects: "Projects",
     about: "About",
@@ -25,7 +26,15 @@ export const en: Dictionary = {
     lead: "I'm Ahmet, a Flutter developer. From messaging to live location tracking, I design and build mobile, web and desktop apps end to end.",
     primaryCta: "Explore projects",
     secondaryCta: "Work with me",
-    stats: { projects: "Projects", certificates: "Certificates" },
+    stats: { projects: "Projects", published: "On Google Play", certificates: "Certificates" },
+  },
+  apps: {
+    eyebrow: "Live on Google Play",
+    title: "Apps in users' hands",
+    intro: "Apps I built from idea to store release, available to download today.",
+    open: "Open on Google Play",
+    all: "Developer page",
+    categories: { game: "Game", education: "Education" },
   },
   services: {
     eyebrow: "Services",

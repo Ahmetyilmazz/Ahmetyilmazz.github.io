@@ -15,6 +15,7 @@ export const switchLocalePath = (pathname: string, target: Locale) => {
 };
 
 export const sectionIds = {
+  apps: "apps",
   services: "services",
   projects: "projects",
   about: "about",

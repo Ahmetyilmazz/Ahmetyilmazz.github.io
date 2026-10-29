@@ -27,6 +27,7 @@ export default function Header({ locale, nav }: HeaderProps) {
   }, [isOpen]);
 
   const links = [
+    { id: sectionIds.apps, label: nav.apps },
     { id: sectionIds.services, label: nav.services },
     { id: sectionIds.projects, label: nav.projects },
     { id: sectionIds.about, label: nav.about },
@@ -47,7 +48,7 @@ export default function Header({ locale, nav }: HeaderProps) {
           <span className="hidden text-sm sm:inline">{site.name}</span>
         </Link>
 
-        <nav aria-label={nav.menu} className="hidden items-center gap-7 text-sm text-muted md:flex">
+        <nav aria-label={nav.menu} className="hidden items-center gap-7 text-sm text-muted lg:flex">
           {links.map((link) => (
             <Link key={link.id} href={routes.section(locale, link.id)} className="transition hover:text-fg">
               {link.label}
@@ -70,7 +71,7 @@ export default function Header({ locale, nav }: HeaderProps) {
             aria-expanded={isOpen}
             aria-controls="mobile-menu"
             aria-label={nav.menu}
-            className="grid size-10 place-items-center rounded-full border border-line text-muted md:hidden"
+            className="grid size-10 place-items-center rounded-full border border-line text-muted lg:hidden"
           >
             {isOpen ? <X size={18} /> : <Menu size={18} />}
           </button>
@@ -78,7 +79,7 @@ export default function Header({ locale, nav }: HeaderProps) {
       </Container>
 
       {isOpen && (
-        <nav id="mobile-menu" aria-label={nav.menu} className="border-t border-line bg-bg md:hidden">
+        <nav id="mobile-menu" aria-label={nav.menu} className="border-t border-line bg-bg lg:hidden">
           <Container className="grid gap-1 py-4">
             {[...links, { id: sectionIds.contact, label: nav.contact }].map((link) => (
               <Link

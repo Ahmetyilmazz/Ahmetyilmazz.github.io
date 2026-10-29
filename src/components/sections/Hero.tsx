@@ -3,6 +3,7 @@ import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n";
 import { projects } from "@/content/projects";
 import { certificates } from "@/content/certificates";
+import { playApps } from "@/content/apps";
 import { routes, sectionIds } from "@/lib/routes";
 import Container from "@/components/ui/Container";
 import ButtonLink from "@/components/ui/ButtonLink";
@@ -17,6 +18,7 @@ export default function Hero({ locale, hero }: HeroProps) {
   const [front, back] = projects.filter((project) => project.featured);
   const stats = [
     { label: hero.stats.projects, value: projects.length },
+    { label: hero.stats.published, value: playApps.length },
     { label: hero.stats.certificates, value: certificates.length },
   ];
 

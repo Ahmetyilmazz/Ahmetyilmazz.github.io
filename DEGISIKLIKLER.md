@@ -48,5 +48,20 @@
 
 **Doğrulama**: `npx tsc --noEmit` hatasız; `npx next build` 23 statik sayfa üretti; `out/` içinde `lang`, canonical, `hreflang` ve başlıklar kontrol edildi; Edge headless ile masaüstü (1440 px), 600 px ve proje sayfası ekran görüntüleri incelendi.
 
+## 2026-10-29 — Google Play uygulamaları bölümü
+
+**Ne değişti**
+1. `src/content/apps.ts`: Google Play'de yayında olan 4 uygulama (Learn English | OXFORD 4000+, 11 Dilde Kelime Öğren, Temel Matematik, Solo Test). Ad ve kısa açıklamalar mağaza sayfasındaki resmi TR/EN metinlerden alındı.
+2. Uygulama ikonları `public/images/apps/` altına 256 px PNG olarak indirildi (Google sunucusuna doğrudan bağlantı kırılgan olduğu için).
+3. Yeni "Google Play'de yayında" bölümü Hero'nun hemen altına eklendi: ikon, kategori, kısa açıklama, mağaza bağlantısı ve geliştirici sayfası bağlantısı.
+4. Hero istatistiklerine "Google Play'de" sayısı, menüye "Uygulamalar", footer'a Google Play ikonu eklendi.
+5. Menü öğesi arttığı için masaüstü menüsü 1024 px ve üstünde gösteriliyor; altında menü düğmesi kullanılıyor.
+
+**Neden**: Yayındaki uygulamalar, işe alımcı ve müşteriler için en güçlü kanıt.
+
+**Dosyalar**: `src/content/apps.ts`, `src/content/site.ts`, `src/components/sections/PlayApps.tsx`, `src/components/sections/Hero.tsx`, `src/components/layout/Header.tsx`, `src/components/layout/Footer.tsx`, `src/app/[locale]/page.tsx`, `src/lib/routes.ts`, `src/i18n/dictionaries/*`, `public/images/apps/*`
+
+**Doğrulama**: `npx tsc --noEmit` hatasız, `npx next build` başarılı; 1440 px ve 900 px ekran görüntüleri incelendi.
+
 **Sonraki aşama**
 5. Görsel/video optimizasyonu (PNG → WebP, video sıkıştırma), yeni OG görseli, sitemap/robots, JSON-LD, README
