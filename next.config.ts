@@ -2,7 +2,8 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: "export",
-  trailingSlash: false,
+  // GitHub Pages, aynı adlı klasör varken /tr isteğini /tr/ adresine çevirir; sayfalar klasör/index.html olarak üretilir.
+  trailingSlash: true,
   images: {
     unoptimized: true,
   },

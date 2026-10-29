@@ -10,7 +10,6 @@
     "deploy": "npm run build && echo 'Build tamamlandı, out/ dizinini deploy edin'"
   },
   "dependencies": {
-    "framer-motion": "^12.23.24",
     "lucide-react": "^0.545.0",
     "next": "^16.0.10",
     "react": "^19.2.3",

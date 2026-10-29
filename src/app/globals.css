@@ -1,34 +1,81 @@
 @import "tailwindcss";
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
-html {
-  scroll-behavior: smooth;
+/* Vitrin tasarım token'ları: koyu tema varsayılan, açık tema [data-theme="light"] ile gelir. */
+:root {
+  --bg: #0d1118;
+  --surface: #161c26;
+  --surface-2: #1d2532;
+  --fg: #eef2f7;
+  --muted: #95a0b3;
+  --line: #253041;
+  --accent: #54c5f8;
+  --accent-fg: #0d1118;
+  --highlight: #ffd166;
+  --shadow: 0 24px 60px rgb(0 0 0 / 0.45);
+  color-scheme: dark;
 }
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+:root[data-theme="light"] {
+  --bg: #f5f7fa;
+  --surface: #ffffff;
+  --surface-2: #eef2f6;
+  --fg: #0f1620;
+  --muted: #536072;
+  --line: #dbe2ea;
+  --accent: #0a6fab;
+  --accent-fg: #ffffff;
+  --highlight: #9a6400;
+  --shadow: 0 24px 60px rgb(15 22 32 / 0.12);
+  color-scheme: light;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-fg: var(--accent-fg);
+  --color-highlight: var(--highlight);
+  --shadow-showcase: var(--shadow);
+  --font-sans: var(--font-figtree), system-ui, sans-serif;
+  --font-display: var(--font-unbounded), var(--font-figtree), system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
 body {
-  @apply bg-gradient-to-b from-[#0f172a] to-[#1e293b] text-white font-sans;
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
 }
