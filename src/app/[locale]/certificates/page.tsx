@@ -25,6 +25,7 @@ export default async function CertificatesPage({ params }: LocaleParams) {
 
   return (
     <Section
+      headingLevel="h1"
       eyebrow={dict.eyebrow}
       title={dict.pageTitle}
       intro={dict.pageIntro}

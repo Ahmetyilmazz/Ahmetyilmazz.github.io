@@ -15,12 +15,12 @@ export default function NotFound() {
       </head>
       <body className="grid min-h-dvh place-items-center px-5">
         <main className="grid max-w-xl gap-10 text-center">
-          <p className="font-display text-7xl font-extrabold text-accent">404</p>
+          <h1 className="font-display text-7xl font-extrabold text-accent">404</h1>
           {locales.map((locale) => {
             const { notFound } = getDictionary(locale);
             return (
               <section key={locale} lang={locale} className="grid gap-2">
-                <h1 className="font-display text-xl font-bold">{notFound.title}</h1>
+                <h2 className="font-display text-xl font-bold">{notFound.title}</h2>
                 <p className="text-muted">{notFound.text}</p>
                 <a href={routes.home(locale)} className="font-semibold text-accent hover:underline">
                   {notFound.home}

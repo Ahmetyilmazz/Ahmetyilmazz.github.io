@@ -30,7 +30,10 @@ export default function Contact({ contact }: { contact: Dictionary["contact"] })
                 <Mail size={14} /> {contact.email}
               </span>
               <div className="flex flex-wrap items-center justify-between gap-3">
-                <a href={`mailto:${site.email}`} className="select-all break-all font-display font-bold hover:text-accent">
+                <a
+                  href={`mailto:${site.email}`}
+                  className="min-w-0 select-all font-semibold [overflow-wrap:anywhere] hover:text-accent sm:font-display sm:text-lg sm:font-bold"
+                >
                   {site.email}
                 </a>
                 <CopyEmail email={site.email} labels={{ copy: contact.copy, copied: contact.copied }} />

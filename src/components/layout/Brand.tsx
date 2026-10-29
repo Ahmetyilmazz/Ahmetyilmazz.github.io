@@ -3,7 +3,7 @@ import { site } from "@/content/site";
 
 interface BrandProps {
   href: string;
-  /** Dar ekranlarda ad ve rolü gizler. */
+  /** Dar ekranlarda rolü gizler; ad her zaman görünür. */
   compact?: boolean;
 }
 
@@ -19,9 +19,9 @@ export default function Brand({ href, compact = false }: BrandProps) {
           className="size-full rounded-full border-2 border-bg object-cover"
         />
       </span>
-      <span className={`flex-col leading-tight ${compact ? "hidden sm:flex" : "flex"}`}>
-        <span className="font-display text-sm font-bold">{site.name}</span>
-        <span className="text-xs text-muted">{site.role}</span>
+      <span className="flex flex-col leading-tight">
+        <span className="font-display text-sm font-bold whitespace-nowrap">{site.name}</span>
+        <span className={`text-xs text-muted ${compact ? "hidden sm:inline" : ""}`}>{site.role}</span>
       </span>
     </Link>
   );

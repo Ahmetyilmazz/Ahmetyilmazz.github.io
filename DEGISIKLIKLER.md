@@ -212,6 +212,26 @@
 
 **Doğrulama**: Geçici test sayfasıyla Edge headless'ta: açık tema → dil EN → tema açık kalıyor; tema koyu → dil EN kalıyor; dil TR → tema koyu kalıyor. Düzeltmeden önce aynı test temanın sıfırlandığını gösterdi.
 
+## 2026-10-29 — Kapsamlı test ve bulunan hataların düzeltilmesi
+
+**Nasıl test edildi**
+- Build çıktısına konan geçici bir test sayfasıyla Edge headless'ta 13 sayfa, 1280 px ve 390 px genişlikte otomatik kontrol: `html lang`, `h1` sayısı, yatay taşma, kırık görsel, eksik `alt`, tekrarlanan id, erişilebilir adı olmayan bağlantı ve düğmeler, menü bağlantı hedefleri, dil düğmesinin karşılık gelen sayfayı göstermesi, video yüklenmesi.
+- Etkileşimler: mobil menünün açılıp kapanması, sertifika filtrelerinin doğru sayıda kart göstermesi, arama (Türkçe büyük harf dahil) ve boş durum mesajı.
+- 30 iç link, sitemap, robots, og.png, favicon ve 404 yanıtları.
+- Tarayıcı konsolunda sayfa hatası ya da hydration hatası olup olmadığı.
+- Telefon (390 px), tablet (768 px), 1024 px ve masaüstü genişliklerinde, iki temada ekran görüntüleri.
+
+**Bulunan ve düzeltilen hatalar**
+1. Sertifikalar sayfasında `h1` yoktu (başlık `h2` idi). `Section` bileşenine `headingLevel` seçeneği eklendi.
+2. Telefonda iletişimdeki e-posta adresi harf ortasından ikiye bölünüyordu; küçük ekranda font küçültüldü.
+3. Sertifika kartlarında "Doğrula" bağlantıları farklı hizalardaydı; kartın altına sabitlendi.
+4. Telefonda header'da yalnızca avatar görünüyordu; ad artık her genişlikte görünüyor, rol yalnızca geniş ekranda.
+5. 404 sayfasında iki `h1` vardı; "404" tek `h1`, dil başlıkları `h2` oldu.
+
+**Sorun olmadığı doğrulananlar**: kırık link/görsel, yatay taşma, konsol hatası yok. Filtre, arama, mobil menü, video, dil ve tema geçişleri çalışıyor.
+
+**Dosyalar**: `src/components/ui/Section.tsx`, `src/app/[locale]/certificates/page.tsx`, `src/components/sections/Contact.tsx`, `src/components/certificates/CertificateCard.tsx`, `src/components/layout/Brand.tsx`, `src/app/not-found.tsx`
+
 ## Açık kalan işler
 - Demo videoları (~100 MB) sıkıştırılmalı; bilgisayarda `ffmpeg` yok.
 - GoatCounter ziyaretçi sayacı (kullanıcının site kodu bekleniyor).

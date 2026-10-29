@@ -28,7 +28,7 @@ export default function CertificateCard({ certificate, locale, labels }: Certifi
         loading="lazy"
         className="aspect-[1.414] w-full border-b border-line bg-surface-2 object-cover"
       />
-      <div className="grid content-start gap-3 p-6">
+      <div className="flex flex-col gap-3 p-6">
         <span className="text-xs font-semibold uppercase tracking-[0.12em] text-highlight">{labels.category}</span>
         <h3 className="font-display text-base font-bold leading-snug">{title}</h3>
         <p className="text-sm text-muted">
@@ -44,7 +44,7 @@ export default function CertificateCard({ certificate, locale, labels }: Certifi
           href={certificate.credentialUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-1 inline-flex w-fit items-center gap-1.5 text-sm font-semibold text-accent hover:underline"
+          className="mt-auto inline-flex w-fit items-center gap-1.5 pt-1 text-sm font-semibold text-accent hover:underline"
         >
           {labels.verify} <ExternalLink size={14} aria-hidden="true" />
           <span className="sr-only">: {title}</span>
