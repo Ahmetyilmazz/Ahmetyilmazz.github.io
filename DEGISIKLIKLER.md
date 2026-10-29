@@ -172,6 +172,34 @@
 
 **Doğrulama**: `npx tsc --noEmit` hatasız; koddaki tüm görsel yollarının dosyası mevcut; `npx next build` başarılı; TR sayfada TR, EN sayfada EN kapak kullanıldığı çıktıda kontrol edildi; kapak görseli gözle incelendi.
 
+## 2026-10-29 — Proje teknolojileri sadeleştirildi
+
+> Not: Bu değişiklik `5def5f3` commit'inde yapıldı; günlük kaydı o commit'e eklenmeyi unutulduğu için bir sonraki commit'te eklendi.
+
+**Ne değişti**: Tüm projelerde paket listeleri yerine yalnızca "Dart, Flutter" gösteriliyor (`flutterStack` sabiti). Bu etiketler her kartta aynı olacağı için proje kartlarından kaldırıldı; detay sayfasındaki "Kullanılan teknolojiler" bölümünde duruyor.
+
+**Neden**: Kullanıcı isteği; paket adları ziyaretçi için gürültüydü.
+
+**Dosyalar**: `src/content/projects.ts`, `src/components/projects/ProjectCard.tsx`
+
+**Doğrulama**: `npx tsc --noEmit` ve `npx next build` başarılı; çıktıda eski paket adlarının kalmadığı kontrol edildi.
+
+## 2026-10-29 — Dil tercihi geri/ileri gezinmede korunuyor
+
+**Sorun**: Bir projede dil EN yapılıp geri tuşuna basılınca TR sayfaya dönülüyordu. Dil değişimi tarayıcı geçmişine yeni bir kayıt ekliyordu ve önceki kayıtlar eski dildeydi.
+
+**Ne değişti**
+1. Dil düğmesi geçmişe yeni kayıt eklemiyor, mevcut kaydın yerine geçiyor (`Link replace`). Geri tuşu bir önceki sayfaya gider.
+2. `LocaleSync` bileşeni: geri/ileri ile başka dildeki bir sayfaya dönülürse, kayıtlı tercih edilen dildeki karşılığına geçer. Sayfa doğrudan açıldığında (ör. paylaşılan link) adresteki dil tercih olarak kaydedilir.
+3. Dil parametresi değişince Next.js layout'u yeniden kurduğu için "belge ilk açıldı" bilgisi modül düzeyinde tutuluyor (ilk denemede bu yüzden tercih yanlışlıkla TR'ye dönüyordu; testle bulundu).
+4. `readPreference` yardımcısı eklendi.
+
+**Neden kütüphane değişmedi**: next-intl gibi kütüphaneler de dili adreste (`/tr/`, `/en/`) tutar; sorun kütüphaneden değil geçmiş yönetiminden kaynaklanıyordu. Adres tabanlı dil, Google'ın iki dili ayrı dizinlemesi için gerekli.
+
+**Dosyalar**: `src/components/layout/LocaleSync.tsx`, `src/components/layout/LanguageSwitcher.tsx`, `src/app/[locale]/layout.tsx`, `src/lib/preferences.ts`
+
+**Doğrulama**: Build çıktısına konan geçici bir test sayfasıyla Edge headless'ta adım adım test edildi: `/tr/` → proje → EN → geri sonucu `/en/` (tercih `en`); tercih `tr` iken `/en/certificates/` doğrudan açıldığında EN'de kalıyor ve tercih `en` oluyor.
+
 ## Açık kalan işler
 - Demo videoları (~100 MB) sıkıştırılmalı; bilgisayarda `ffmpeg` yok.
 - GoatCounter ziyaretçi sayacı (kullanıcının site kodu bekleniyor).

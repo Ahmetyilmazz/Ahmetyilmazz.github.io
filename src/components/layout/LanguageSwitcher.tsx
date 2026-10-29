@@ -18,6 +18,7 @@ export default function LanguageSwitcher({ locale, label }: LanguageSwitcherProp
   return (
     <Link
       href={switchLocalePath(pathname, target)}
+      replace
       hrefLang={target}
       aria-label={label}
       title={label}

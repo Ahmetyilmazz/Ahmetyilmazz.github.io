@@ -12,6 +12,14 @@ export const themeInitScript = `try{if(localStorage.getItem("${storageKeys.theme
 export const localeRedirectScript = (path: string) =>
   `var l;try{l=localStorage.getItem("${storageKeys.locale}")}catch(e){}if(l!=="tr"&&l!=="en"){l=(navigator.language||"").toLowerCase().indexOf("tr")===0?"tr":"en"}location.replace("/"+l+${JSON.stringify(path)})`;
 
+export const readPreference = (key: keyof typeof storageKeys): string | null => {
+  try {
+    return localStorage.getItem(storageKeys[key]);
+  } catch {
+    return null;
+  }
+};
+
 export const savePreference = (key: keyof typeof storageKeys, value: string) => {
   try {
     localStorage.setItem(storageKeys[key], value);

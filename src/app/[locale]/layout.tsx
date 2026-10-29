@@ -9,6 +9,7 @@ import { buildMetadata } from "@/lib/metadata";
 import { themeInitScript } from "@/lib/preferences";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import LocaleSync from "@/components/layout/LocaleSync";
 
 export const dynamicParams = false;
 
@@ -41,6 +42,7 @@ export default async function LocaleLayout({ children, params }: LocaleParams & 
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
       <body className="min-h-dvh">
+        <LocaleSync locale={locale} />
         <Header locale={locale} nav={dict.nav} />
         <main id="main">{children}</main>
         <Footer locale={locale} footer={dict.footer} nav={dict.nav} />
