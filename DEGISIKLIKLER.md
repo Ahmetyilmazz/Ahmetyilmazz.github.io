@@ -321,9 +321,20 @@
 
 **Not**: Localhost'taki `serve` sunucusu `$` içeren Next.js dosya adlarını (ör. `__next.$d$locale…txt`) 404 ile döndürüyor; canlıda bu dosyalar 200, sorun yalnızca yerel test sunucusunda.
 
+## 2026-10-29 — Başka bilgisayara taşımaya hazırlık
+
+**Ne değişti**
+1. Otomasyon kapak diyagramlarını üreten script projeye taşındı (`scripts/generate-automation-covers.mjs`, `npm run covers`); önceden geçici klasördeydi.
+2. README'ye "Yeni bilgisayarda kurulum" bölümü ve yayınla ilgili uyarılar (gh-pages, app-ads.txt, static_site_generator) eklendi.
+3. Proje kuralları ve verilen kararlar (commit imzası, git kimliği, yayın notları, içerik kararları, test yöntemi) repoya dahil olmayan yerel bir notlar dosyasına yazıldı.
+4. Açık işler listesi kullanıcı kararlarına göre güncellendi.
+
+**Dosyalar**: `scripts/generate-automation-covers.mjs`, `package.json`, `README.md`, `DEGISIKLIKLER.md`
+
+**Doğrulama**: `npm run covers` mevcut kapak görsellerini birebir aynı üretti (MD5 karşılaştırması); `npm run typecheck` ve `npm run build` başarılı.
+
 ## Açık kalan işler
-- Demo videoları (~100 MB) sıkıştırılmalı; bilgisayarda `ffmpeg` yok.
-- GoatCounter ziyaretçi sayacı (kullanıcının site kodu bekleniyor).
-- Google Search Console doğrulaması (isteğe bağlı).
-- ESLint kurulumu ve CI'da lint/typecheck adımı.
-- Güncel profil fotoğrafı (mevcut fotoğraf 2021 tarihli).
+- Demo videoları (~100 MB) sıkıştırılabilir; bunun için `ffmpeg` ya da HandBrake gerekiyor.
+- YouTube Shorts projesindeki "tamamen yerelde" ifadesi: kullanılan TTS internet üzerinden çalışan bir servisse metin "dil modeli yerelde" olarak düzeltilmeli (kullanıcıdan teyit bekleniyor).
+- İsteğe bağlı: Google Search Console doğrulaması, ESLint kurulumu ve CI'da lint/typecheck adımı.
+- Kullanıcı kararıyla yapılmayacaklar: GoatCounter sayacı, LinkedIn profil fotoğrafı, animasyon davranışının değiştirilmesi.

@@ -11,6 +11,7 @@ Flutter ile geliştirdiğim mobil, web ve masaüstü uygulamalar, Google Play'de
 - **İki dil:** `/tr/` ve `/en/`. Kök adres, kayıtlı tercihe ya da tarayıcı diline göre yönlendirir.
 - **Koyu ve açık tema:** Koyu tema varsayılan; seçim tarayıcıda hatırlanır.
 - **Google Play uygulamaları:** Kendi yayınladığım ve ORELTEK için geliştirdiğim uygulamalar.
+- **Yapay zeka projeleri:** n8n ve yerelde çalışan dil modelleriyle (Ollama, Gemma 4) LinkedIn ve YouTube Shorts otomasyonları.
 - **Proje sayfaları:** Problem → Çözüm anlatımı, kullanılan teknolojiler, demo videosu, mağaza ve kaynak kod bağlantıları.
 - **Sertifikalar:** Kategori filtresi ve arama, doğrulama bağlantıları.
 - **SEO:** Sayfa bazlı meta veriler, `hreflang`, build sırasında üretilen paylaşım görseli, `sitemap.xml`, `robots.txt`, JSON-LD.
@@ -29,6 +30,24 @@ Next.js 16 (App Router, statik export) · React 19 · TypeScript · Tailwind CSS
 | `npm run preview` | `out/` klasörünü yerelde sunar; GitHub Pages'teki davranışa en yakın test |
 | `npm run typecheck` | TypeScript kontrolü |
 | `npm run images` | `public/images` altındaki PNG/JPG görselleri WebP'ye çevirir |
+| `npm run covers` | Otomasyon projelerinin TR/EN kapak diyagramlarını yeniden üretir |
+
+## Yeni bilgisayarda kurulum
+
+1. **Node.js 20.9 veya üstü** kurun (https://nodejs.org). Kontrol: `node -v`
+2. Proje klasöründe bağımlılıkları kurun:
+   ```
+   npm ci
+   ```
+   `node_modules`, `.next` ve `out` klasörleri taşınmaz; bu komutla yeniden oluşur.
+3. Geliştirme sunucusu: `npm run dev` → http://localhost:3000/tr/
+4. Yayına çıkacak hali test etmek için: `npm run build` ve ardından `npm run preview` → http://localhost:3000/tr/
+5. Git kimliğini kontrol edin; commit'ler sizin adınızla atılmalı:
+   ```
+   git config user.name
+   git config user.email
+   ```
+   Farklıysa yalnızca bu proje için ayarlayın: `git config user.name "Ahmet YILMAZ"` ve `git config user.email "<e-posta>"`.
 
 ## İçerik nasıl güncellenir
 
@@ -62,11 +81,15 @@ src/
   content/               Projeler, uygulamalar, sertifikalar, site bilgileri
   i18n/                  Dil ayarları ve TR / EN sözlükleri
   lib/                   Rotalar, meta veri, tercihler, tarih ve OG yardımcıları
-scripts/                 Görsel optimizasyon script'i
+scripts/                 Görsel optimizasyonu ve otomasyon kapak diyagramı script'leri
 ```
 
 ## Yayın
 
-`main` dalına yapılan her push, `.github/workflows/nextjs.yml` iş akışıyla build edilip GitHub Pages'e yayınlanır.
+`main` dalına yapılan her push, `.github/workflows/nextjs.yml` iş akışıyla build edilip GitHub Pages'e yayınlanır. Yayın durumu GitHub'da **Actions** sekmesinden izlenir.
+
+- `gh-pages` dalına push yapmayın: o dalda eski (2025) site duruyor ve yeniden yayına çıkabilir.
+- `app-ads.txt` (AdMob) ayrı bir repodan (`Ahmetyilmazz/app-ads.txt`) yayınlanır; bu repodaki değişikliklerden etkilenmez.
+- Workflow'daki `configure-pages` adımına `static_site_generator: next` eklemeyin; `next.config.ts` ayarlarını ezip alt sayfaların 404 vermesine yol açar.
 
 Değişiklik geçmişi: [DEGISIKLIKLER.md](DEGISIKLIKLER.md)
