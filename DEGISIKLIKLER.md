@@ -297,7 +297,9 @@
 
 **Ne değişti**: `static_site_generator: next` kaldırıldı; export ayarları zaten `next.config.ts` içinde.
 
-**Ek bulgu**: GitHub Pages ayarında kaynak "Deploy from a branch → gh-pages" görünüyor; `gh-pages` dalında Nisan 2025'ten kalma eski Vite sitesi var. Canlı içerik Actions'tan geliyor. Kaynağın "GitHub Actions" yapılması gerekiyor (kullanıcı yapacak).
+**Ek bulgu**: GitHub Pages ayarında kaynak "Deploy from a branch → gh-pages" görünüyor; `gh-pages` dalında Nisan 2025'ten kalma eski Vite sitesi var. Canlı içerik buna rağmen Actions workflow'undan geliyor (canlıda `_next/static` var). Kullanıcı kararıyla ayar değiştirilmiyor; Actions yayını bu ayarla da çalışıyor.
+
+**Dikkat**: `gh-pages` dalına push yapılmamalı; yapılırsa eski site yeniden yayına çıkabilir. `app-ads.txt` ayrı bir repodan (`Ahmetyilmazz/app-ads.txt`) yayınlandığı için bu reponun ayarlarından etkilenmez.
 
 **Dosyalar**: `.github/workflows/nextjs.yml`
 
