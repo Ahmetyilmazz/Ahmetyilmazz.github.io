@@ -232,6 +232,21 @@
 
 **Dosyalar**: `src/components/ui/Section.tsx`, `src/app/[locale]/certificates/page.tsx`, `src/components/sections/Contact.tsx`, `src/components/certificates/CertificateCard.tsx`, `src/components/layout/Brand.tsx`, `src/app/not-found.tsx`
 
+## 2026-10-29 — Dil değişince sayfanın başa dönmesi düzeltildi
+
+**Sorun**: Ana sayfada menüden bir bölüme (ör. Hakkımda, adres `/tr/#about`) gidip dil değiştirilince sayfa en üste dönüyordu. Dil düğmesinin linki yalnızca `/en/` idi; bölüm işaretini (`#about`) ve kaydırma konumunu taşımıyordu.
+
+**Ne değişti**: Dil düğmesi tıklandığı anda adresteki bölüm işaretini yeni adrese ekliyor ve sayfayı kaydırmadan (`scroll: false`) geçiş yapıyor. Ctrl/Shift ile tıklama (yeni sekmede açma) normal link gibi çalışmaya devam ediyor.
+
+**Dosyalar**: `src/components/layout/LanguageSwitcher.tsx`
+
+**Doğrulama**: Edge'de DevTools protokolüyle gerçek sekme ve gerçek fare tıklamasıyla:
+- Menüden Hakkımda → EN → TR: adres `/en/#about` ve `/tr/#about`, kaydırma konumu aynı, ekranda Hakkımda bölümü.
+- Menüden Uygulamalar → EN: `/en/#apps`, aynı konum.
+- Elle Projeler'e kaydırma (adreste bölüm işareti yok) → EN: aynı konumda kalıyor.
+- Telefon (390 px) menüsünden Hakkımda → EN: `/en/#about`, aynı konum.
+- Proje detay sayfalarında dil değişimi (regresyon testi): aynı projenin diğer dildeki sayfasına gidiyor.
+
 ## Açık kalan işler
 - Demo videoları (~100 MB) sıkıştırılmalı; bilgisayarda `ffmpeg` yok.
 - GoatCounter ziyaretçi sayacı (kullanıcının site kodu bekleniyor).
