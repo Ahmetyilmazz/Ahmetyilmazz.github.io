@@ -92,7 +92,7 @@ export default async function ProjectPage({ params }: ProjectParams) {
             </div>
           </div>
           <img
-            src={project.image}
+            src={project.image[locale]}
             alt={project.title[locale]}
             {...projectImageSize}
             fetchPriority="high"

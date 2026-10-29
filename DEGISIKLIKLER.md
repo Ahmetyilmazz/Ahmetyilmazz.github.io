@@ -160,6 +160,18 @@
 
 **Doğrulama**: `npm run build` başarılı; build çıktısındaki CSS'te `infinite reverse` olduğu kontrol edildi. Hareketin yönü tarayıcıda gözle kontrol edilmedi.
 
+## 2026-10-29 — Görevlerim görseli ve metinleri mağazaya göre güncellendi
+
+**Ne değişti**
+1. Görevlerim için eski "Aile Asistanı" görseli yerine Google Play mağaza ekranlarından üretilmiş yeni kapaklar: `public/images/gorevlerim-tr.webp` (TR mağaza ekranları) ve `gorevlerim-en.webp` (EN mağaza ekranları). Mağazadaki ilk üç telefon ekranı, gradyan zemin üzerinde 1600×1200 olarak birleştirildi (sharp ile, tek seferlik).
+2. Projelerin `image` alanı iki dilli oldu (`Localized`); dile göre değişmeyen görseller `sameInAll` ile tanımlı.
+3. Görevlerim metinleri mağazadaki güncel uygulamaya göre düzeltildi: platform "Mobil · Tablet · Aile", yıldız/ödül sistemi, takvim ve istatistik, gün sonu kutlaması, hesap gerektirmemesi, reklam ve takip olmaması.
+4. Artık kullanılmayan `cocuk_takip.webp` silindi.
+
+**Dosyalar**: `src/content/projects.ts`, `src/components/projects/ProjectCard.tsx`, `src/components/sections/Hero.tsx`, `src/app/[locale]/projects/[slug]/page.tsx`, `public/images/gorevlerim-{tr,en}.webp`, `public/images/cocuk_takip.webp` (silindi)
+
+**Doğrulama**: `npx tsc --noEmit` hatasız; koddaki tüm görsel yollarının dosyası mevcut; `npx next build` başarılı; TR sayfada TR, EN sayfada EN kapak kullanıldığı çıktıda kontrol edildi; kapak görseli gözle incelendi.
+
 ## Açık kalan işler
 - Demo videoları (~100 MB) sıkıştırılmalı; bilgisayarda `ffmpeg` yok.
 - GoatCounter ziyaretçi sayacı (kullanıcının site kodu bekleniyor).

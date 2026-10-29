@@ -69,7 +69,7 @@ export default function Hero({ locale, hero }: HeroProps) {
         <div className="enter relative mx-auto w-full max-w-xl pb-10 lg:pb-0" style={delay(250)}>
           <div className="float-slow absolute -right-2 top-8 w-4/5">
             <img
-              src={back.image}
+              src={back.image[locale]}
               alt=""
               {...projectImageSize}
               className="w-full rotate-6 rounded-3xl border border-line opacity-60 shadow-showcase"
@@ -77,7 +77,7 @@ export default function Hero({ locale, hero }: HeroProps) {
           </div>
           <div className="float relative w-11/12">
             <img
-              src={front.image}
+              src={front.image[locale]}
               alt={front.title[locale]}
               {...projectImageSize}
               fetchPriority="high"

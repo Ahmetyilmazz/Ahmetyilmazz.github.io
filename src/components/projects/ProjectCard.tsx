@@ -24,7 +24,7 @@ export default function ProjectCard({ project, locale, labels, compact = false }
     >
       <div className="relative overflow-hidden bg-surface-2">
         <img
-          src={project.image}
+          src={project.image[locale]}
           alt=""
           {...projectImageSize}
           loading="lazy"

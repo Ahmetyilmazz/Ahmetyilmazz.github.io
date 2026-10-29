@@ -1,4 +1,4 @@
-import type { Localized } from "@/i18n/config";
+import { sameInAll, type Localized } from "@/i18n/config";
 import { oreltek } from "./apps";
 
 /** Tüm proje görselleri 4:3 oranında ve bu boyutta üretilir (npm run images). */
@@ -18,7 +18,8 @@ export interface Project {
   playStore?: string;
   /** Bir şirket adına geliştirildiyse şirketin adı. */
   developedFor?: string;
-  image: string;
+  /** Mağaza ekranları gibi dile göre değişen görseller için TR/EN ayrı tutulur. */
+  image: Localized;
   video?: string;
   featured?: boolean;
 }
@@ -42,7 +43,7 @@ export const projects: Project[] = [
     },
     technologies: ["Flutter", "Firebase", "flutter_webrtc", "flutter_sound", "Provider", "image_picker", "video_player", "emoji_picker_flutter"],
     github: "https://github.com/Ahmetyilmazz/Mesajlasma-Uygulamasi",
-    image: "/images/chatapp.webp",
+    image: sameInAll("/images/chatapp.webp"),
     featured: true,
   },
   {
@@ -63,30 +64,30 @@ export const projects: Project[] = [
     },
     technologies: ["Flutter", "flutter_map", "geolocator", "geocoding", "latlong2", "http", "JSON"],
     github: "https://github.com/Ahmetyilmazz/Otoyol-Rehberi",
-    image: "/images/otoyol_rehberim.webp",
+    image: sameInAll("/images/otoyol_rehberim.webp"),
     video: "/videos/otoyol_rehberim.mp4",
     featured: true,
   },
   {
     slug: "gorevlerim",
     title: { tr: "Görevlerim", en: "MyRoutines" },
-    platform: { tr: "Tablet · Aile", en: "Tablet · Family" },
+    platform: { tr: "Mobil · Tablet · Aile", en: "Mobile · Tablet · Family" },
     summary: {
-      tr: "Çocukların günlük görevlerini oyunlaştırarak takip eden, ebeveyn ve çocuk için tablet uygulaması.",
-      en: "A gamified tablet app that helps parents and children keep track of daily tasks.",
+      tr: "Çocuklara rutin kazandıran, yıldız ve ödül sistemiyle oyunlaştırılmış görev tablosu.",
+      en: "A gamified chore chart that builds routines for kids with stars and rewards.",
     },
     problem: {
       tr: "Ebeveynler çocuklarına sorumluluk kazandırmak istiyor ama görev listeleri çocuklar için sıkıcı kalıyor ve takip etmek zorlaşıyor.",
       en: "Parents want to teach their children responsibility, but plain task lists bore kids and are hard to follow up on.",
     },
     solution: {
-      tr: "Ebeveynler günlük, haftalık ve aylık görev atar; çocuklar görevleri tamamladıkça puan ve rozet kazanır. Konfeti ve Lottie animasyonlarıyla motivasyon artar, veriler cihazda SQLite ile saklanır.",
-      en: "Parents assign daily, weekly and monthly tasks, and children earn points and badges as they complete them. Confetti and Lottie animations keep them motivated, and data is stored on the device with SQLite.",
+      tr: "Ebeveynler her çocuk için günlük, haftalık ve aylık görevler tanımlar; çocuklar tamamladıkça yıldız toplar ve yıldızları ödüllere dönüştürür. Takvim ve istatistik ekranlarıyla ilerleme birlikte izlenir, gün sonu kutlama animasyonuyla motivasyon artar. Hesap gerekmez; tüm veriler cihazda kalır, reklam ve takip yoktur.",
+      en: "Parents set daily, weekly and monthly tasks for each child; kids collect stars as they finish them and turn stars into rewards. Calendar and statistics screens let families follow progress together, and an end-of-day celebration keeps kids motivated. No account is needed: all data stays on the device, with no ads or tracking.",
     },
     technologies: ["Flutter", "sqflite", "Provider", "shared_preferences", "image_picker", "geolocator", "confetti", "Lottie"],
     playStore: "com.oreltek.gorevlerim",
     developedFor: oreltek.name,
-    image: "/images/cocuk_takip.webp",
+    image: { tr: "/images/gorevlerim-tr.webp", en: "/images/gorevlerim-en.webp" },
     featured: true,
   },
   {
@@ -108,7 +109,7 @@ export const projects: Project[] = [
     technologies: ["Flutter", "SQLite", "Google AdMob", "State Management"],
     github: "https://github.com/Ahmetyilmazz/English-Learn",
     playStore: "app.ahmetylmzzz.words",
-    image: "/images/english_learn.webp",
+    image: sameInAll("/images/english_learn.webp"),
     video: "/videos/english_word.mp4",
   },
   {
@@ -129,7 +130,7 @@ export const projects: Project[] = [
     },
     technologies: ["Flutter", "Firebase Authentication", "Cloud Firestore", "REST API"],
     github: "https://github.com/Ahmetyilmazz/ServisTakip",
-    image: "/images/servis_takip.webp",
+    image: sameInAll("/images/servis_takip.webp"),
     video: "/videos/servis_takip.mp4",
   },
   {
@@ -150,7 +151,7 @@ export const projects: Project[] = [
     },
     technologies: ["Flutter", "Google Auth", "REST API", "UI/UX"],
     github: "https://github.com/Ahmetyilmazz/TeamApp",
-    image: "/images/team_app.webp",
+    image: sameInAll("/images/team_app.webp"),
     video: "/videos/team_app.mp4",
   },
   {
@@ -171,7 +172,7 @@ export const projects: Project[] = [
     },
     technologies: ["Flutter", "flutter_background", "geolocator", "geocoding", "http", "shared_preferences", "flutter_local_notifications"],
     github: "https://github.com/Ahmetyilmazz/Instant_Location_Tracking",
-    image: "/images/anlik_konum.webp",
+    image: sameInAll("/images/anlik_konum.webp"),
   },
 ];
 
