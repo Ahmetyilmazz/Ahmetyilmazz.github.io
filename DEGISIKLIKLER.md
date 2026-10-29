@@ -277,6 +277,32 @@
 
 **Doğrulama**: `npx tsc --noEmit` ve `npm run build` başarılı (31 sayfa, 9 proje sayfası); kodda eski projeye referans kalmadığı kontrol edildi; hizmetler ve projeler bölümü ekran görüntüsüyle incelendi.
 
+## 2026-10-29 — Commit yazarları düzeltildi
+
+**Sorun**: Bu oturumdaki 20 commit, bilgisayarın global git kullanıcısı olan başka bir stajyerin (Furkan Liman) adı ve şirket e-postasıyla atılıp push edilmişti.
+
+**Ne yapıldı**
+1. Bu projeye local git kimliği ayarlandı: `Ahmet YILMAZ <ahmeet.ylmzzz@gmail.com>` (global ayara dokunulmadı).
+2. Kullanıcının açık onayıyla (CLAUDE.md'deki "geçmişi yeniden yazma" kuralına bu iş için istisna) `12cc799` sonrasındaki 20 commit'in yalnızca yazar bilgisi değiştirildi; içerik, mesaj ve tarihler korundu. Öncesi `yedek-oncesi-yazar-duzeltme` dalında yedeklendi.
+
+**Doğrulama**: Tüm geçmişte yazar artık yalnızca Ahmet YILMAZ; `git diff yedek-oncesi-yazar-duzeltme main` boş (içerik birebir aynı); commit sayısı 20.
+
+**Not**: GitHub'a gitmesi için kullanıcının `git push --force-with-lease origin main` çalıştırması gerekiyor.
+
+## 2026-10-29 — Canlı sitede alt sayfaların 404 vermesi düzeltildi
+
+**Sorun**: Canlıda yalnızca kök adres çalışıyordu; `/tr/`, `/en/` ve tüm alt sayfalar 404 veriyordu (`/tr` ise açılıyordu).
+
+**Neden**: Workflow'daki `configure-pages` adımında `static_site_generator: next` vardı. Bu seçenek `next.config.js` arıyor; projede `next.config.ts` olduğu için boş bir `next.config.js` oluşturup onu kullandırıyor. Böylece `trailingSlash: true` yok sayılıyor ve sayfalar `tr/index.html` yerine `tr.html` olarak üretiliyordu. Yerel build'de bu adım olmadığı için sorun görünmedi.
+
+**Ne değişti**: `static_site_generator: next` kaldırıldı; export ayarları zaten `next.config.ts` içinde.
+
+**Ek bulgu**: GitHub Pages ayarında kaynak "Deploy from a branch → gh-pages" görünüyor; `gh-pages` dalında Nisan 2025'ten kalma eski Vite sitesi var. Canlı içerik Actions'tan geliyor. Kaynağın "GitHub Actions" yapılması gerekiyor (kullanıcı yapacak).
+
+**Dosyalar**: `.github/workflows/nextjs.yml`
+
+**Doğrulama**: Canlı sitede `curl` ile `/` 200, `/tr` 200, `/tr/` 404 olduğu görüldü (teşhis). Düzeltmenin canlı doğrulaması push sonrası yapılacak.
+
 ## Açık kalan işler
 - Demo videoları (~100 MB) sıkıştırılmalı; bilgisayarda `ffmpeg` yok.
 - GoatCounter ziyaretçi sayacı (kullanıcının site kodu bekleniyor).
