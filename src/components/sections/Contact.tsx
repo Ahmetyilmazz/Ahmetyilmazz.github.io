@@ -9,12 +9,12 @@ import CopyEmail from "./CopyEmail";
 
 export default function Contact({ contact }: { contact: Dictionary["contact"] }) {
   return (
-    <section id={sectionIds.contact} aria-labelledby="contact-title" className="py-20 sm:py-28">
+    <section id={sectionIds.contact} aria-labelledby="contact-title" className="py-16 sm:py-24">
       <Container>
-        <div className="relative grid gap-8 overflow-hidden rounded-[2rem] border border-line bg-surface p-8 sm:p-14 lg:grid-cols-[1.2fr_1fr] lg:items-end">
+        <div className="reveal relative grid gap-8 overflow-hidden rounded-[2rem] border border-line bg-surface p-8 sm:p-14 lg:grid-cols-[1.2fr_1fr] lg:items-end">
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute -bottom-32 -right-32 size-96 rounded-full bg-accent/15 blur-3xl"
+            className="drift pointer-events-none absolute -bottom-32 -right-32 size-96 rounded-full bg-accent/15 blur-3xl"
           />
           <div className="relative grid gap-4">
             <span className="text-xs font-semibold uppercase tracking-[0.14em] text-highlight">{contact.eyebrow}</span>

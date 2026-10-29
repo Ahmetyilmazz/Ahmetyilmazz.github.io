@@ -138,8 +138,9 @@ export const en: Dictionary = {
     form: "Fill in the contact form",
   },
   footer: {
+    tagline: "I design and build mobile, web and desktop apps with Flutter.",
+    siteLinks: "Site links",
     rights: "All rights reserved.",
-    builtWith: "Built with Next.js.",
   },
   notFound: {
     title: "Page not found",

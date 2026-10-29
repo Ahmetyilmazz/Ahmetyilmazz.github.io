@@ -90,5 +90,22 @@
 
 **Doğrulama**: `npx tsc --noEmit` hatasız, `npx next build` başarılı; çıktıda Görevlerim GitHub linkinin olmadığı ve ORELTEK ibaresinin iki dilde de bulunduğu kontrol edildi.
 
+## 2026-10-29 — Logo, footer ve animasyonlar
+
+**Ne değişti**
+1. Header'daki "AY" kutusu yerine `Brand` bileşeni: gradyan çerçeveli profil fotoğrafı + ad + "Flutter Developer". Footer'da da kullanılıyor.
+2. Footer yeniden düzenlendi: marka, kısa tanım, site bağlantıları, sosyal ikonlar. "Next.js ile geliştirildi" ibaresi kaldırıldı.
+3. Animasyonlar (yalnızca CSS, `prefers-reduced-motion` açıkken kapalı):
+   - Hero: kademeli açılış, süzülen proje görselleri, yavaşça kayan ışık lekeleri, nokta deseni, yanıp sönen "açığım" göstergesi, gradyanlı başlık.
+   - Hero altında kayan teknoloji bandı (fareyle üzerine gelince durur).
+   - Bölüm başlıkları ve kartlar kaydırdıkça beliriyor (scroll-driven animation; desteklemeyen tarayıcıda içerik doğrudan görünür).
+   - Hizmet kartlarında hover efekti.
+4. Açık tema için ikinci vurgu rengi (`--accent-2`): gradyan başlık açık temada kahverengiye kaçıyordu.
+5. Bölüm dikey boşlukları azaltıldı.
+
+**Dosyalar**: `src/app/globals.css`, `src/components/layout/{Brand,Header,Footer}.tsx`, `src/components/sections/{Hero,TechMarquee,Services,Projects,PlayApps,About,CertificatesPreview,Contact}.tsx`, `src/components/ui/Section.tsx`, `src/content/site.ts`, `src/app/[locale]/{layout,page}.tsx`, `src/i18n/dictionaries/*`
+
+**Doğrulama**: `npx tsc --noEmit` hatasız, `npx next build` başarılı; koyu tema 1440 px, açık tema 1280 px ve 600 px ekran görüntüleri incelendi.
+
 **Sonraki aşama**
 5. Görsel/video optimizasyonu (PNG → WebP, video sıkıştırma), yeni OG görseli, sitemap/robots, JSON-LD, README

@@ -136,8 +136,9 @@ export const tr = {
     form: "İletişim formunu doldur",
   },
   footer: {
+    tagline: "Flutter ile mobil, web ve masaüstü uygulamalar tasarlayıp geliştiriyorum.",
+    siteLinks: "Site bağlantıları",
     rights: "Tüm hakları saklıdır.",
-    builtWith: "Next.js ile geliştirildi.",
   },
   notFound: {
     title: "Sayfa bulunamadı",

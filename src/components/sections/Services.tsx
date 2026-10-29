@@ -18,8 +18,11 @@ export default function Services({ locale, services }: { locale: Locale; service
     <Section id={sectionIds.services} eyebrow={services.eyebrow} title={services.title} intro={services.intro}>
       <ul className="grid gap-5 md:grid-cols-3">
         {items.map(({ key, Icon, title, text, points }) => (
-          <li key={key} className="grid content-start gap-4 rounded-3xl border border-line bg-surface p-7">
-            <span className="grid size-12 place-items-center rounded-2xl bg-accent/15 text-accent">
+          <li
+            key={key}
+            className="reveal group grid content-start gap-4 rounded-3xl border border-line bg-surface p-7 transition hover:border-accent"
+          >
+            <span className="grid size-12 place-items-center rounded-2xl bg-accent/15 text-accent transition group-hover:scale-110 group-hover:bg-accent group-hover:text-accent-fg">
               <Icon size={22} />
             </span>
             <h3 className="font-display text-lg font-bold">{title}</h3>

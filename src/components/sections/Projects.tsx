@@ -21,14 +21,14 @@ export default function Projects({ locale, dict }: { locale: Locale; dict: Dicti
     >
       <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {featured.map((project) => (
-          <li key={project.slug}>
+          <li key={project.slug} className="reveal">
             <ProjectCard project={project} locale={locale} labels={labels} />
           </li>
         ))}
       </ul>
       <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {others.map((project) => (
-          <li key={project.slug}>
+          <li key={project.slug} className="reveal">
             <ProjectCard project={project} locale={locale} labels={labels} compact />
           </li>
         ))}

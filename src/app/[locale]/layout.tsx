@@ -43,7 +43,7 @@ export default async function LocaleLayout({ children, params }: LocaleParams & 
       <body className="min-h-dvh">
         <Header locale={locale} nav={dict.nav} />
         <main id="main">{children}</main>
-        <Footer footer={dict.footer} />
+        <Footer locale={locale} footer={dict.footer} nav={dict.nav} />
       </body>
     </html>
   );

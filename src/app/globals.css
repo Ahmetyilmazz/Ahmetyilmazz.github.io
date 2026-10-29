@@ -10,6 +10,7 @@
   --line: #253041;
   --accent: #54c5f8;
   --accent-fg: #0d1118;
+  --accent-2: #ffd166;
   --highlight: #ffd166;
   --shadow: 0 24px 60px rgb(0 0 0 / 0.45);
   color-scheme: dark;
@@ -24,6 +25,7 @@
   --line: #dbe2ea;
   --accent: #0a6fab;
   --accent-fg: #ffffff;
+  --accent-2: #12a38a;
   --highlight: #9a6400;
   --shadow: 0 24px 60px rgb(15 22 32 / 0.12);
   color-scheme: light;
@@ -38,6 +40,7 @@
   --color-line: var(--line);
   --color-accent: var(--accent);
   --color-accent-fg: var(--accent-fg);
+  --color-accent-2: var(--accent-2);
   --color-highlight: var(--highlight);
   --shadow-showcase: var(--shadow);
   --font-sans: var(--font-figtree), system-ui, sans-serif;
@@ -65,6 +68,74 @@ h3 {
 :focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
+}
+
+/* Hareket: yalnızca kullanıcı "hareketi azalt" seçmediyse çalışır; içerik animasyonsuz da tam görünür. */
+@media (prefers-reduced-motion: no-preference) {
+  .enter {
+    animation: enter 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+    animation-delay: var(--delay, 0ms);
+  }
+
+  .float {
+    animation: float 7s ease-in-out infinite;
+  }
+
+  .float-slow {
+    animation: float 9s ease-in-out 1s infinite reverse;
+  }
+
+  .drift {
+    animation: drift 18s ease-in-out infinite alternate;
+  }
+
+  .marquee-track {
+    animation: marquee 45s linear infinite;
+  }
+
+  .marquee:hover .marquee-track {
+    animation-play-state: paused;
+  }
+
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 70%;
+    }
+  }
+}
+
+@keyframes enter {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(32px) scale(0.98);
+  }
+}
+
+@keyframes float {
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes drift {
+  to {
+    transform: translate(-80px, 60px) scale(1.15);
+  }
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

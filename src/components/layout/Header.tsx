@@ -6,8 +6,8 @@ import { Menu, X } from "lucide-react";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n";
 import { routes, sectionIds } from "@/lib/routes";
-import { site } from "@/content/site";
 import Container from "@/components/ui/Container";
+import Brand from "./Brand";
 import LanguageSwitcher from "./LanguageSwitcher";
 import ThemeToggle from "./ThemeToggle";
 
@@ -43,10 +43,7 @@ export default function Header({ locale, nav }: HeaderProps) {
         {nav.skipToContent}
       </a>
       <Container className="flex h-16 items-center justify-between gap-4">
-        <Link href={routes.home(locale)} className="flex items-center gap-3 font-display font-bold">
-          <span className="grid size-9 place-items-center rounded-xl bg-accent text-sm text-accent-fg">AY</span>
-          <span className="hidden text-sm sm:inline">{site.name}</span>
-        </Link>
+        <Brand href={routes.home(locale)} compact />
 
         <nav aria-label={nav.menu} className="hidden items-center gap-7 text-sm text-muted lg:flex">
           {links.map((link) => (

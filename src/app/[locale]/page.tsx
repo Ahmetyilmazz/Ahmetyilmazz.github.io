@@ -1,6 +1,7 @@
 import { getDictionary } from "@/i18n";
 import { resolveLocale, type LocaleParams } from "@/i18n/params";
 import Hero from "@/components/sections/Hero";
+import TechMarquee from "@/components/sections/TechMarquee";
 import PlayApps from "@/components/sections/PlayApps";
 import Services from "@/components/sections/Services";
 import Projects from "@/components/sections/Projects";
@@ -15,6 +16,7 @@ export default async function HomePage({ params }: LocaleParams) {
   return (
     <>
       <Hero locale={locale} hero={dict.hero} />
+      <TechMarquee />
       <PlayApps locale={locale} apps={dict.apps} />
       <Services locale={locale} services={dict.services} />
       <Projects locale={locale} dict={dict.projects} />

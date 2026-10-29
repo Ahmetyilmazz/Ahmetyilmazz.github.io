@@ -25,7 +25,7 @@ export default function CertificatesPreview({ locale, dict }: { locale: Locale; 
     >
       <ul className="grid gap-6 md:grid-cols-3">
         {featured.map((certificate) => (
-          <li key={certificate.id}>
+          <li key={certificate.id} className="reveal">
             <CertificateCard
               certificate={certificate}
               locale={locale}

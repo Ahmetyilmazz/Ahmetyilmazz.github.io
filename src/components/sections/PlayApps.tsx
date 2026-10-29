@@ -38,7 +38,7 @@ export default function PlayApps({ locale, apps }: PlayAppsProps) {
             </div>
             <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {group.apps.map((app) => (
-                <li key={app.packageId}>
+                <li key={app.packageId} className="reveal">
                   <AppCard app={app} locale={locale} apps={apps} />
                 </li>
               ))}

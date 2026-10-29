@@ -12,7 +12,7 @@ interface AboutProps {
 export default function About({ about, stackDict }: AboutProps) {
   return (
     <Section id={sectionIds.about} eyebrow={about.eyebrow} title={about.title}>
-      <div className="grid items-start gap-10 lg:grid-cols-[auto_1fr_1fr]">
+      <div className="reveal grid items-start gap-10 lg:grid-cols-[auto_1fr_1fr]">
         <img
           src="/images/profil.jpg"
           alt={site.name}
@@ -40,7 +40,7 @@ export default function About({ about, stackDict }: AboutProps) {
         <h3 className="font-display text-xl font-bold">{stackDict.title}</h3>
         <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {(Object.keys(stack) as StackGroup[]).map((group) => (
-            <li key={group} className="grid content-start gap-3 rounded-3xl border border-line bg-surface p-6">
+            <li key={group} className="reveal grid content-start gap-3 rounded-3xl border border-line bg-surface p-6">
               <span className="text-sm font-semibold">{stackDict.groups[group]}</span>
               <div className="flex flex-wrap gap-2">
                 {stack[group].map((tool) => (

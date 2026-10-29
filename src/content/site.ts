@@ -10,6 +10,7 @@ export const site = {
     linkedin: "https://www.linkedin.com/in/ahmeeet/",
     googlePlay: "https://play.google.com/store/apps/developer?id=Ahmet+YIILMAZ",
   },
+  avatar: "/images/profil.jpg",
   ogImage: "/open_graph_image.png",
 } as const;
 
