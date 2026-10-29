@@ -35,7 +35,6 @@ export async function generateMetadata({ params }: ProjectParams): Promise<Metad
     path: `projects/${project.slug}/`,
     title: project.title[locale],
     description: project.summary[locale],
-    image: project.image,
   });
 }
 

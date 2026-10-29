@@ -124,5 +124,21 @@
 
 **Doğrulama**: Koddaki 31 görsel yolunun hepsinin dosyası mevcut (script ile kontrol edildi); örnek görsel gözle incelendi; `npx tsc --noEmit` ve `npx next build` başarılı.
 
+## 2026-10-29 — SEO ve paylaşım görünümü
+
+**Ne değişti**
+1. Paylaşım görseli: `src/app/[locale]/og.png/route.tsx` build sırasında `/tr/og.png` ve `/en/og.png` (1200×630) üretir; avatar, ad, rol, hero başlığı ve istatistikler içerir. Fontlar build sırasında Google Fonts'tan alınır (`src/lib/og.ts`).
+2. Tüm sayfalarda `og:image` ve `twitter:image` bu görsele bağlandı (`src/lib/metadata.ts`). Önceden alt sayfalarda görsel yoktu.
+3. Eski `public/open_graph_image.png` silindi: 1200×630 olması gerekirken 32×32 piksellikti, paylaşım önizlemesi bu yüzden çıkmıyordu.
+4. Favicon: Next.js'in varsayılan `favicon.ico` dosyası yerine marka renkleriyle `src/app/icon.svg` ("A" monogramı).
+5. `sitemap.xml` (18 sayfa, dil alternatifleriyle) ve `robots.txt` eklendi.
+6. Ana sayfaya schema.org `Person` yapılandırılmış verisi (JSON-LD) eklendi.
+
+**Neden**: Link paylaşıldığında düzgün önizleme, Google'da doğru dizinleme ve kişi bilgisinin tanınması.
+
+**Dosyalar**: `src/app/[locale]/og.png/route.tsx`, `src/lib/og.ts`, `src/lib/metadata.ts`, `src/app/icon.svg`, `src/app/sitemap.ts`, `src/app/robots.ts`, `src/components/seo/PersonJsonLd.tsx`, `src/app/[locale]/page.tsx`, `src/app/[locale]/projects/[slug]/page.tsx`, `src/content/site.ts`, `src/app/favicon.ico` (silindi), `public/open_graph_image.png` (silindi)
+
+**Doğrulama**: `npx next build` 27 sayfa üretti; `og.png` dosyaları 1200×630 PNG; ana sayfa, sertifikalar ve proje sayfasında `og:image` etiketi kontrol edildi; OG görseli ve favicon gözle incelendi.
+
 **Sonraki aşama**
 5. Görsel/video optimizasyonu (PNG → WebP, video sıkıştırma), yeni OG görseli, sitemap/robots, JSON-LD, README

@@ -12,7 +12,6 @@ export const site = {
   },
   avatar: "/images/profil-avatar.webp",
   photo: "/images/profil.webp",
-  ogImage: "/open_graph_image.png",
 } as const;
 
 export const stack = {
