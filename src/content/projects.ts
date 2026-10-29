@@ -4,7 +4,7 @@ import { oreltek } from "./apps";
 /** Tüm proje görselleri 4:3 oranında ve bu boyutta üretilir (npm run images). */
 export const projectImageSize = { width: 1600, height: 1200 } as const;
 
-/** Projelerde paket listesi yerine yalnızca dil ve framework gösterilir. */
+/** Flutter projelerinde paket listesi yerine yalnızca dil ve framework gösterilir. */
 const flutterStack = ["Dart", "Flutter"];
 
 export interface Project {
@@ -91,6 +91,26 @@ export const projects: Project[] = [
     playStore: "com.oreltek.gorevlerim",
     developedFor: oreltek.name,
     image: { tr: "/images/gorevlerim-tr.webp", en: "/images/gorevlerim-en.webp" },
+    featured: true,
+  },
+  {
+    slug: "ai-content-automation",
+    title: { tr: "Yapay Zeka İçerik Otomasyonu", en: "AI Content Automation" },
+    platform: { tr: "Yapay Zeka · Otomasyon", en: "AI · Automation" },
+    summary: {
+      tr: "Yerelde çalışan Gemma 4 modeliyle LinkedIn gönderileri ve YouTube Shorts videoları hazırlayıp planlı olarak yayınlayan otomasyon.",
+      en: "Automation that drafts LinkedIn posts and YouTube Shorts with a locally running Gemma 4 model and publishes them on schedule.",
+    },
+    problem: {
+      tr: "Düzenli içerik üretmek çok zaman alıyordu: Flutter dünyasındaki gelişmeleri takip etmek, bunlardan paylaşım hazırlamak ve kısa videolar üretmek her gün ayrı bir iş demekti.",
+      en: "Producing content regularly took a lot of time: following what is new in Flutter, turning it into posts and making short videos was a separate job every day.",
+    },
+    solution: {
+      tr: "Docker üzerinde n8n ile iki iş akışı kurdum. İlkinde RSS kaynaklarından Flutter/Dart gündemindeki konular alınıyor, Ollama ile çalışan Gemma 4 bu konuya kısa bir LinkedIn gönderisi yazıyor ve gönderi planlanan saatte paylaşılıyor. İkincisinde Gemma 4 senaryoyu ve metni hazırlıyor, MoneyPrinterTurbo ücretsiz stok görsel ve videolarla kısa videoyu üretiyor ve video YouTube Shorts olarak yükleniyor. Model dahil her şey yerelde çalıştığı için API maliyeti yok ve metin üretimi için harici bir yapay zeka servisine veri gönderilmiyor.",
+      en: "I built two workflows with n8n running on Docker. In the first, trending Flutter/Dart topics are pulled from RSS feeds, Gemma 4 running on Ollama writes a short LinkedIn post about the topic, and the post is published at a scheduled time. In the second, Gemma 4 writes the script and narration, MoneyPrinterTurbo renders a short video with free stock images and footage, and the video is uploaded as a YouTube Short. Everything, including the model, runs locally: there are no API costs and no data is sent to an external AI service to generate the text.",
+    },
+    technologies: ["n8n", "Ollama", "Gemma 4", "Docker", "MoneyPrinterTurbo"],
+    image: { tr: "/images/ai-automation-tr.webp", en: "/images/ai-automation-en.webp" },
     featured: true,
   },
   {

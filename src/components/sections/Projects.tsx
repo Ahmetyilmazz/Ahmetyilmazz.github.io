@@ -19,7 +19,7 @@ export default function Projects({ locale, dict }: { locale: Locale; dict: Dicti
       aside={<span className="text-sm text-muted">{format(dict.count, { count: projects.length })}</span>}
       className="bg-surface-2/40"
     >
-      <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <ul className="grid gap-6 md:grid-cols-2">
         {featured.map((project) => (
           <li key={project.slug} className="reveal">
             <ProjectCard project={project} locale={locale} labels={labels} />

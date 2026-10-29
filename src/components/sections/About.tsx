@@ -38,7 +38,7 @@ export default function About({ about, stackDict }: AboutProps) {
 
       <div className="grid gap-6">
         <h3 className="font-display text-xl font-bold">{stackDict.title}</h3>
-        <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
           {(Object.keys(stack) as StackGroup[]).map((group) => (
             <li key={group} className="reveal grid content-start gap-3 rounded-3xl border border-line bg-surface p-6">
               <span className="text-sm font-semibold">{stackDict.groups[group]}</span>

@@ -247,6 +247,21 @@
 - Telefon (390 px) menüsünden Hakkımda → EN: `/en/#about`, aynı konum.
 - Proje detay sayfalarında dil değişimi (regresyon testi): aynı projenin diğer dildeki sayfasına gidiyor.
 
+## 2026-10-29 — Yapay zeka içerik otomasyonu projesi eklendi
+
+**Ne değişti**
+1. Yeni öne çıkan proje "Yapay Zeka İçerik Otomasyonu" (`/projects/ai-content-automation/`): Docker üzerinde n8n ile iki iş akışı. RSS'ten Flutter/Dart konuları → Gemma 4 (Ollama) ile LinkedIn gönderisi → planlı paylaşım; Gemma 4 ile senaryo → MoneyPrinterTurbo ve ücretsiz stok medya ile video → YouTube Shorts. Her şey yerelde çalışıyor.
+2. Kapak görseli: iş akışı ekran görüntüsü olmadığı için iki akışı gösteren bir diyagram tasarlandı (`public/images/ai-automation-{tr,en}.webp`, SVG'den sharp ile tek seferlik üretildi). Gerçek ekran görüntüsü izlenimi vermiyor, açıkça şema.
+3. Teknolojilere "Yapay zeka ve otomasyon" grubu: Ollama, Gemma 4, n8n, Docker (kayan bantta ve JSON-LD'de de görünüyor).
+4. Hakkımda'ya yerel LLM ve otomasyon çalışmalarını anlatan bir cümle eklendi.
+5. Öne çıkan projeler 4'e çıktığı için vitrin 2×2 düzene alındı; teknoloji grupları 5 sütuna çıkarıldı. Projeler bölümünün açıklaması "Flutter ve yapay zeka ile" olarak güncellendi.
+
+**Neden**: Yapay zeka entegrasyonu ve otomasyon deneyimi, Flutter profilini ayırt eden bir yetkinlik.
+
+**Dosyalar**: `src/content/projects.ts`, `src/content/site.ts`, `src/i18n/dictionaries/*`, `src/components/sections/{Projects,About}.tsx`, `public/images/ai-automation-{tr,en}.webp`
+
+**Doğrulama**: `npx tsc --noEmit` ve `npm run build` başarılı (29 sayfa); projeler bölümü, EN detay sayfası ve Hakkımda bölümü ekran görüntüsüyle incelendi.
+
 ## Açık kalan işler
 - Demo videoları (~100 MB) sıkıştırılmalı; bilgisayarda `ffmpeg` yok.
 - GoatCounter ziyaretçi sayacı (kullanıcının site kodu bekleniyor).

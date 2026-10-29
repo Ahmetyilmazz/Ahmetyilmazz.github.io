@@ -19,6 +19,7 @@ export const stack = {
   web: ["HTML", "CSS", "JavaScript", "React", "Next.js"],
   desktop: ["Flutter Desktop", "Electron.js"],
   data: ["Firebase", "SQLite", "REST API", "JSON", "Google AdMob"],
+  ai: ["Ollama", "Gemma 4", "n8n", "Docker"],
 } as const;
 
 export type StackGroup = keyof typeof stack;

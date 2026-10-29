@@ -66,7 +66,7 @@ export const tr = {
   projects: {
     eyebrow: "Seçili işler",
     title: "Projeler",
-    intro: "Gerçek bir ihtiyaçtan doğan, Flutter ile geliştirdiğim uygulamalar.",
+    intro: "Gerçek bir ihtiyaçtan doğan, Flutter ve yapay zeka ile geliştirdiğim projeler.",
     count: "{count} proje",
     details: "Detayları gör",
     demo: "Demo videosu",
@@ -85,6 +85,7 @@ export const tr = {
     paragraphs: [
       "Matematik-Bilgisayar bölümünden mezun oldum. Diferansiyel denklemler ve soyut cebirle geçen yıllar bana problemleri parçalara ayırıp modellemeyi öğretti; bugün aynı yaklaşımı yazılıma uyguluyorum.",
       "Flutter ile tek kod tabanından mobil, web ve masaüstüne ulaşan uygulamalar geliştiriyorum. Temiz mimariye, okunabilir koda ve keyifle kullanılan arayüzlere önem veriyorum.",
+      "Son dönemde yerelde çalışan büyük dil modelleri (Ollama) ve n8n ile içerik ve iş akışı otomasyonları da geliştiriyorum.",
     ],
     facts: [
       { label: "Eğitim", value: "Matematik-Bilgisayar, Lisans" },
@@ -100,6 +101,7 @@ export const tr = {
       web: "Web",
       desktop: "Masaüstü",
       data: "Veri ve servisler",
+      ai: "Yapay zeka ve otomasyon",
     },
   },
   certificates: {

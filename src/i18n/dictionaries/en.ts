@@ -68,7 +68,7 @@ export const en: Dictionary = {
   projects: {
     eyebrow: "Selected work",
     title: "Projects",
-    intro: "Apps I built with Flutter, each born from a real need.",
+    intro: "Projects I built with Flutter and AI, each born from a real need.",
     count: "{count} projects",
     details: "View details",
     demo: "Demo video",
@@ -87,6 +87,7 @@ export const en: Dictionary = {
     paragraphs: [
       "I graduated in Mathematics and Computer Science. Years of differential equations and abstract algebra taught me to break problems down and model them, and I bring the same approach to software.",
       "I build apps with Flutter that reach mobile, web and desktop from a single codebase. I care about clean architecture, readable code and interfaces people enjoy using.",
+      "Lately I have also been building content and workflow automations with locally hosted large language models (Ollama) and n8n.",
     ],
     facts: [
       { label: "Education", value: "BSc, Mathematics & Computer Science" },
@@ -102,6 +103,7 @@ export const en: Dictionary = {
       web: "Web",
       desktop: "Desktop",
       data: "Data & services",
+      ai: "AI & automation",
     },
   },
   certificates: {
