@@ -89,8 +89,9 @@ h3 {
     animation: drift 18s ease-in-out infinite alternate;
   }
 
+  /* reverse: bant soldan sağa akar */
   .marquee-track {
-    animation: marquee 45s linear infinite;
+    animation: marquee 45s linear infinite reverse;
   }
 
   .marquee:hover .marquee-track {

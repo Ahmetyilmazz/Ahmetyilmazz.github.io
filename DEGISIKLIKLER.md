@@ -150,6 +150,16 @@
 
 **Doğrulama**: `npm run typecheck` ve `npm run build` başarılı.
 
+## 2026-10-29 — Teknoloji bandının yönü
+
+**Ne değişti**: Hero altındaki kayan teknoloji bandı artık soldan sağa akıyor (`animation-direction: reverse`).
+
+**Neden**: Kullanıcı tercihi.
+
+**Dosyalar**: `src/app/globals.css`
+
+**Doğrulama**: `npm run build` başarılı; localhost'ta yön kontrol edildi.
+
 ## Açık kalan işler
 - Demo videoları (~100 MB) sıkıştırılmalı; bilgisayarda `ffmpeg` yok.
 - GoatCounter ziyaretçi sayacı (kullanıcının site kodu bekleniyor).
