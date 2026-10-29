@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import { FaGithub } from "react-icons/fa6";
+import { FaGithub, FaGooglePlay } from "react-icons/fa6";
+import { playStoreUrl } from "@/content/apps";
 import { getDictionary } from "@/i18n";
 import { resolveLocale, type LocaleParams } from "@/i18n/params";
 import { getProject, projects } from "@/content/projects";
@@ -40,7 +41,7 @@ export async function generateMetadata({ params }: ProjectParams): Promise<Metad
 
 export default async function ProjectPage({ params }: ProjectParams) {
   const { locale, project } = await loadProject(params);
-  const dict = getDictionary(locale).projects;
+  const { projects: dict, apps } = getDictionary(locale);
 
   const index = projects.indexOf(project);
   const previous = projects[(index - 1 + projects.length) % projects.length];
@@ -69,7 +70,12 @@ export default async function ProjectPage({ params }: ProjectParams) {
             <h1 className="font-display text-4xl font-extrabold leading-tight sm:text-5xl">{project.title[locale]}</h1>
             <p className="text-lg text-muted">{project.summary[locale]}</p>
             <div className="flex flex-wrap gap-3">
-              <ButtonLink href={project.github} external>
+              {project.playStore && (
+                <ButtonLink href={playStoreUrl(project.playStore)} external>
+                  <FaGooglePlay size={15} /> {apps.open}
+                </ButtonLink>
+              )}
+              <ButtonLink href={project.github} variant={project.playStore ? "ghost" : "primary"} external>
                 <FaGithub size={16} /> {dict.source}
               </ButtonLink>
               {project.video && (

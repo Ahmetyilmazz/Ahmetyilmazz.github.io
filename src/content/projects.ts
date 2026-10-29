@@ -9,6 +9,8 @@ export interface Project {
   solution: Localized;
   technologies: string[];
   github: string;
+  /** Google Play paket adı; uygulama mağazada yayındaysa doldurulur. */
+  playStore?: string;
   image: string;
   video?: string;
   featured?: boolean;
@@ -80,8 +82,8 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    slug: "english-learn",
-    title: { tr: "English Learn", en: "English Learn" },
+    slug: "learn-english",
+    title: { tr: "Learn English", en: "Learn English" },
     platform: { tr: "Mobil · Eğitim", en: "Mobile · Education" },
     summary: {
       tr: "Düzenli tekrar ile İngilizce kelime öğrenmeyi kolaylaştıran kart uygulaması.",
@@ -97,6 +99,7 @@ export const projects: Project[] = [
     },
     technologies: ["Flutter", "SQLite", "Google AdMob", "State Management"],
     github: "https://github.com/Ahmetyilmazz/English-Learn",
+    playStore: "app.ahmetylmzzz.words",
     image: "/images/english_learn.png",
     video: "/videos/english_word.mp4",
   },

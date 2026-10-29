@@ -1,9 +1,13 @@
 import Link from "next/link";
 import { ArrowUpRight, Play } from "lucide-react";
+import { FaGooglePlay } from "react-icons/fa6";
 import type { Locale } from "@/i18n/config";
 import type { Project } from "@/content/projects";
 import { routes } from "@/lib/routes";
 import Tag from "@/components/ui/Tag";
+
+const badgeClass =
+  "inline-flex items-center gap-1.5 rounded-full bg-bg/80 px-3 py-1 text-xs font-medium backdrop-blur";
 
 interface ProjectCardProps {
   project: Project;
@@ -27,11 +31,18 @@ export default function ProjectCard({ project, locale, labels, compact = false }
           loading="lazy"
           className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-[1.03]"
         />
-        {project.video && (
-          <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-bg/80 px-3 py-1 text-xs font-medium backdrop-blur">
-            <Play size={12} className="fill-current" /> {labels.demo}
-          </span>
-        )}
+        <div className="absolute left-4 top-4 flex flex-wrap gap-2">
+          {project.playStore && (
+            <span className={badgeClass}>
+              <FaGooglePlay size={11} /> Google Play
+            </span>
+          )}
+          {project.video && (
+            <span className={badgeClass}>
+              <Play size={12} className="fill-current" /> {labels.demo}
+            </span>
+          )}
+        </div>
       </div>
       <div className={`grid gap-3 ${compact ? "p-5" : "p-6"}`}>
         <span className="text-xs font-semibold uppercase tracking-[0.12em] text-highlight">

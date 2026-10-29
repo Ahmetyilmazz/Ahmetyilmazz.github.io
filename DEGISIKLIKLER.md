@@ -63,5 +63,18 @@
 
 **Doğrulama**: `npx tsc --noEmit` hatasız, `npx next build` başarılı; 1440 px ve 900 px ekran görüntüleri incelendi.
 
+## 2026-10-29 — Learn English adı birleştirildi ve Google Play bağlantısı
+
+**Ne değişti**
+1. Uygulama listesinde "Learn English | OXFORD 4000+" adı "Learn English" olarak kısaltıldı.
+2. "English Learn" projesi aynı uygulama olduğu için adı "Learn English", adresi `/projects/learn-english/` oldu.
+3. Projelere isteğe bağlı `playStore` (paket adı) alanı eklendi; doluysa proje kartında "Google Play" rozeti, detay sayfasında "Google Play'de aç" düğmesi çıkar.
+
+**Neden**: Aynı uygulamanın sitede iki farklı adla görünmesini önlemek ve projeden mağazaya doğrudan geçiş sağlamak.
+
+**Dosyalar**: `src/content/apps.ts`, `src/content/projects.ts`, `src/components/projects/ProjectCard.tsx`, `src/app/[locale]/projects/[slug]/page.tsx`
+
+**Doğrulama**: `npx tsc --noEmit` hatasız, `npx next build` başarılı, `out/tr/projects/learn-english/` üretildi.
+
 **Sonraki aşama**
 5. Görsel/video optimizasyonu (PNG → WebP, video sıkıştırma), yeni OG görseli, sitemap/robots, JSON-LD, README

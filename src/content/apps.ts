@@ -16,7 +16,7 @@ export const playStoreUrl = (packageId: string) => `https://play.google.com/stor
 export const playApps: PlayApp[] = [
   {
     packageId: "app.ahmetylmzzz.words",
-    name: { tr: "Learn English | OXFORD 4000+", en: "Learn English | OXFORD 4000+" },
+    name: { tr: "Learn English", en: "Learn English" },
     tagline: {
       tr: "Kelimeleri kartlarla öğren! Sesli dinleme, testler ve detaylı sonuç analizi.",
       en: "Learn words with flashcards! Audio listening, tests and detailed result analysis.",
