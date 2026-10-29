@@ -53,14 +53,10 @@ jobs:
         with:
           node-version: "20"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
+      # static_site_generator kullanılmıyor: bu seçenek next.config.js arar, projede next.config.ts olduğu için
+      # boş bir next.config.js üretip trailingSlash gibi ayarları ezer. Export ayarları next.config.ts içinde.
       - name: Setup Pages
         uses: actions/configure-pages@v5
-        with:
-          # Automatically inject basePath in your Next.js configuration file and disable
-          # server side image optimization (https://nextjs.org/docs/api-reference/next/image#unoptimized).
-          #
-          # You may remove this line if you want to manage the configuration yourself.
-          static_site_generator: next
       - name: Restore cache
         uses: actions/cache@v4
         with:
