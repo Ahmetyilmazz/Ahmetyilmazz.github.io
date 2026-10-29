@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n";
-import { projects } from "@/content/projects";
+import { projectImageSize, projects } from "@/content/projects";
 import { certificates } from "@/content/certificates";
 import { playApps } from "@/content/apps";
 import { routes, sectionIds } from "@/lib/routes";
@@ -71,8 +71,7 @@ export default function Hero({ locale, hero }: HeroProps) {
             <img
               src={back.image}
               alt=""
-              width={1920}
-              height={1440}
+              {...projectImageSize}
               className="w-full rotate-6 rounded-3xl border border-line opacity-60 shadow-showcase"
             />
           </div>
@@ -80,8 +79,7 @@ export default function Hero({ locale, hero }: HeroProps) {
             <img
               src={front.image}
               alt={front.title[locale]}
-              width={1920}
-              height={1440}
+              {...projectImageSize}
               fetchPriority="high"
               className="w-full -rotate-2 rounded-3xl border border-line shadow-showcase"
             />

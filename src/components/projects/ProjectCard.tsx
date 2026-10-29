@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowUpRight, Play } from "lucide-react";
 import { FaGooglePlay } from "react-icons/fa6";
 import type { Locale } from "@/i18n/config";
-import type { Project } from "@/content/projects";
+import { projectImageSize, type Project } from "@/content/projects";
 import { routes } from "@/lib/routes";
 import Tag from "@/components/ui/Tag";
 
@@ -26,8 +26,7 @@ export default function ProjectCard({ project, locale, labels, compact = false }
         <img
           src={project.image}
           alt=""
-          width={1920}
-          height={1440}
+          {...projectImageSize}
           loading="lazy"
           className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-[1.03]"
         />

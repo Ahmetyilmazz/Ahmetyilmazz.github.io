@@ -1,6 +1,9 @@
 import type { Localized } from "@/i18n/config";
 import { oreltek } from "./apps";
 
+/** Tüm proje görselleri 4:3 oranında ve bu boyutta üretilir (npm run images). */
+export const projectImageSize = { width: 1600, height: 1200 } as const;
+
 export interface Project {
   slug: string;
   title: Localized;
@@ -39,7 +42,7 @@ export const projects: Project[] = [
     },
     technologies: ["Flutter", "Firebase", "flutter_webrtc", "flutter_sound", "Provider", "image_picker", "video_player", "emoji_picker_flutter"],
     github: "https://github.com/Ahmetyilmazz/Mesajlasma-Uygulamasi",
-    image: "/images/chatApp.png",
+    image: "/images/chatapp.webp",
     featured: true,
   },
   {
@@ -60,7 +63,7 @@ export const projects: Project[] = [
     },
     technologies: ["Flutter", "flutter_map", "geolocator", "geocoding", "latlong2", "http", "JSON"],
     github: "https://github.com/Ahmetyilmazz/Otoyol-Rehberi",
-    image: "/images/otoyol_rehberim.png",
+    image: "/images/otoyol_rehberim.webp",
     video: "/videos/otoyol_rehberim.mp4",
     featured: true,
   },
@@ -83,7 +86,7 @@ export const projects: Project[] = [
     technologies: ["Flutter", "sqflite", "Provider", "shared_preferences", "image_picker", "geolocator", "confetti", "Lottie"],
     playStore: "com.oreltek.gorevlerim",
     developedFor: oreltek.name,
-    image: "/images/cocuk_takip.png",
+    image: "/images/cocuk_takip.webp",
     featured: true,
   },
   {
@@ -105,7 +108,7 @@ export const projects: Project[] = [
     technologies: ["Flutter", "SQLite", "Google AdMob", "State Management"],
     github: "https://github.com/Ahmetyilmazz/English-Learn",
     playStore: "app.ahmetylmzzz.words",
-    image: "/images/english_learn.png",
+    image: "/images/english_learn.webp",
     video: "/videos/english_word.mp4",
   },
   {
@@ -126,7 +129,7 @@ export const projects: Project[] = [
     },
     technologies: ["Flutter", "Firebase Authentication", "Cloud Firestore", "REST API"],
     github: "https://github.com/Ahmetyilmazz/ServisTakip",
-    image: "/images/servis_takip.png",
+    image: "/images/servis_takip.webp",
     video: "/videos/servis_takip.mp4",
   },
   {
@@ -147,7 +150,7 @@ export const projects: Project[] = [
     },
     technologies: ["Flutter", "Google Auth", "REST API", "UI/UX"],
     github: "https://github.com/Ahmetyilmazz/TeamApp",
-    image: "/images/team_app.png",
+    image: "/images/team_app.webp",
     video: "/videos/team_app.mp4",
   },
   {
@@ -168,7 +171,7 @@ export const projects: Project[] = [
     },
     technologies: ["Flutter", "flutter_background", "geolocator", "geocoding", "http", "shared_preferences", "flutter_local_notifications"],
     github: "https://github.com/Ahmetyilmazz/Instant_Location_Tracking",
-    image: "/images/anlik_konum.png",
+    image: "/images/anlik_konum.webp",
   },
 ];
 

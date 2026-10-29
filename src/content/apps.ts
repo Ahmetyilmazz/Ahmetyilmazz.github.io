@@ -30,7 +30,7 @@ const personalApps: PlayApp[] = [
       en: "Learn words with flashcards! Audio listening, tests and detailed result analysis.",
     },
     category: "education",
-    icon: sameInAll("/images/apps/oxford-4000.png"),
+    icon: sameInAll("/images/apps/oxford-4000.webp"),
   },
   {
     packageId: "com.ahmetylmzzz.learnWord",
@@ -40,7 +40,7 @@ const personalApps: PlayApp[] = [
       en: "Learn a foreign language with audio pronunciation and matching games.",
     },
     category: "education",
-    icon: sameInAll("/images/apps/learn-words.png"),
+    icon: sameInAll("/images/apps/learn-words.webp"),
   },
   {
     packageId: "app.ahmetylmzzz.matematik",
@@ -50,7 +50,7 @@ const personalApps: PlayApp[] = [
       en: "A fun math adventure that makes you love math! Add, subtract and break records.",
     },
     category: "education",
-    icon: sameInAll("/images/apps/temel-matematik.png"),
+    icon: sameInAll("/images/apps/temel-matematik.webp"),
   },
   {
     packageId: "app.ahmetylmzzz.solo_test",
@@ -60,7 +60,7 @@ const personalApps: PlayApp[] = [
       en: "Test your intelligence. Plan your strategy and leave the fewest pegs.",
     },
     category: "game",
-    icon: sameInAll("/images/apps/solo-test.png"),
+    icon: sameInAll("/images/apps/solo-test.webp"),
   },
 ];
 
@@ -73,7 +73,7 @@ const companyApps: PlayApp[] = [
       en: "Chore chart and reward app for kids. Build routines, earn stars, win rewards!",
     },
     category: "family",
-    icon: { tr: "/images/apps/gorevlerim-tr.png", en: "/images/apps/gorevlerim-en.png" },
+    icon: { tr: "/images/apps/gorevlerim-tr.webp", en: "/images/apps/gorevlerim-en.webp" },
     developedFor: oreltek.name,
   },
   {
@@ -84,7 +84,7 @@ const companyApps: PlayApp[] = [
       en: "Two-step verification codes that work offline, protected by your phone lock.",
     },
     category: "tools",
-    icon: sameInAll("/images/apps/oreltek-tamga.png"),
+    icon: sameInAll("/images/apps/oreltek-tamga.webp"),
     developedFor: oreltek.name,
   },
   {
@@ -95,7 +95,7 @@ const companyApps: PlayApp[] = [
       en: "The classic peg solitaire brain game: 5 boards, 500 levels and a daily puzzle.",
     },
     category: "game",
-    icon: sameInAll("/images/apps/oreltek-solo-test.png"),
+    icon: sameInAll("/images/apps/oreltek-solo-test.webp"),
     developedFor: oreltek.name,
   },
 ];

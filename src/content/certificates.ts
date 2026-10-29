@@ -27,7 +27,7 @@ export const certificates: Certificate[] = [
     organization: btk,
     date: "2024-09-12",
     hours: 20,
-    image: "/images/certificates/google_flutter_ile_mobil_uygulama.png",
+    image: "/images/certificates/google_flutter_ile_mobil_uygulama.webp",
     credentialUrl: btkVerify("VP1cJdjxDl"),
     category: "mobile",
     skills: {
@@ -42,7 +42,7 @@ export const certificates: Certificate[] = [
     organization: btk,
     date: "2024-08-28",
     hours: 11,
-    image: "/images/certificates/dart_programlama.png",
+    image: "/images/certificates/dart_programlama.webp",
     credentialUrl: btkVerify("2Nwc0W4ywA"),
     category: "mobile",
     skills: {
@@ -57,7 +57,7 @@ export const certificates: Certificate[] = [
     organization: btk,
     date: "2025-02-10",
     hours: 14,
-    image: "/images/certificates/HTML5_ile_web_geliştirme.png",
+    image: "/images/certificates/html5_ile_web_gelistirme.webp",
     credentialUrl: btkVerify("6mqFNMnj0g"),
     category: "web",
     skills: {
@@ -71,7 +71,7 @@ export const certificates: Certificate[] = [
     organization: btk,
     date: "2025-02-10",
     hours: 10,
-    image: "/images/certificates/css_temelleri.png",
+    image: "/images/certificates/css_temelleri.webp",
     credentialUrl: btkVerify("mKEhvZ27lK"),
     category: "web",
     skills: {
@@ -85,7 +85,7 @@ export const certificates: Certificate[] = [
     organization: btk,
     date: "2025-02-28",
     hours: 26,
-    image: "/images/certificates/javascript_temelleri.png",
+    image: "/images/certificates/javascript_temelleri.webp",
     credentialUrl: btkVerify("xr4t0eB2MA"),
     category: "web",
     skills: {
@@ -100,7 +100,7 @@ export const certificates: Certificate[] = [
     organization: btk,
     date: "2025-04-29",
     hours: 11,
-    image: "/images/certificates/csharp_programlama.png",
+    image: "/images/certificates/csharp_programlama.webp",
     credentialUrl: btkVerify("OKMhqlkzKP"),
     category: "desktop",
     skills: {
@@ -114,7 +114,7 @@ export const certificates: Certificate[] = [
     organization: { tr: "Toplum Gönülleri Vakfı", en: "Community Volunteers Foundation (TOG)" },
     date: "2024-09-20",
     hours: 1,
-    image: "/images/certificates/yapay_zeka.png",
+    image: "/images/certificates/yapay_zeka.webp",
     credentialUrl: "https://verified.sertifier.com/tr/verify/36082284064373/",
     category: "ai",
     skills: {
@@ -128,7 +128,7 @@ export const certificates: Certificate[] = [
     organization: btk,
     date: "2024-08-19",
     hours: 4,
-    image: "/images/certificates/siber_guvenlige_giris.png",
+    image: "/images/certificates/siber_guvenlige_giris.webp",
     credentialUrl: btkVerify("EoPfbVp9aA"),
     category: "security",
     skills: {
@@ -142,7 +142,7 @@ export const certificates: Certificate[] = [
     organization: btk,
     date: "2024-08-31",
     hours: 4,
-    image: "/images/certificates/bilgi_teknolojilerine_giris.png",
+    image: "/images/certificates/bilgi_teknolojilerine_giris.webp",
     credentialUrl: btkVerify("D2xh19XVBo"),
     category: "it",
     skills: {
@@ -156,7 +156,7 @@ export const certificates: Certificate[] = [
     organization: btk,
     date: "2024-09-12",
     hours: 2,
-    image: "/images/certificates/temel_ag_teknolojileri.png",
+    image: "/images/certificates/temel_ag_teknolojileri.webp",
     credentialUrl: btkVerify("GoDfnqjrOV"),
     category: "it",
     skills: {
@@ -170,7 +170,7 @@ export const certificates: Certificate[] = [
     organization: btk,
     date: "2024-09-17",
     hours: 1,
-    image: "/images/certificates/işletim_sistemlerine_giris.png",
+    image: "/images/certificates/isletim_sistemlerine_giris.webp",
     credentialUrl: btkVerify("1kZComKAnz"),
     category: "it",
     skills: {
@@ -184,7 +184,7 @@ export const certificates: Certificate[] = [
     organization: btk,
     date: "2024-09-18",
     hours: 1,
-    image: "/images/certificates/proje_yonetim_temelleri.png",
+    image: "/images/certificates/proje_yonetim_temelleri.webp",
     credentialUrl: btkVerify("eK1hyx1mNW"),
     category: "personal",
     skills: {
@@ -198,7 +198,7 @@ export const certificates: Certificate[] = [
     organization: btk,
     date: "2024-10-02",
     hours: 1,
-    image: "/images/certificates/proje_cozme_teknikleri.png",
+    image: "/images/certificates/proje_cozme_teknikleri.webp",
     credentialUrl: btkVerify("JoNfreNznJ"),
     category: "personal",
     skills: {
@@ -212,7 +212,7 @@ export const certificates: Certificate[] = [
     organization: btk,
     date: "2025-04-29",
     hours: 1,
-    image: "/images/certificates/etkili_iletisim_stratejileri.png",
+    image: "/images/certificates/etkili_iletisim_stratejileri.webp",
     credentialUrl: btkVerify("wmlFJP8pxq"),
     category: "personal",
     skills: {

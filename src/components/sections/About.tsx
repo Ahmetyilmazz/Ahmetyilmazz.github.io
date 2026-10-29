@@ -14,7 +14,7 @@ export default function About({ about, stackDict }: AboutProps) {
     <Section id={sectionIds.about} eyebrow={about.eyebrow} title={about.title}>
       <div className="reveal grid items-start gap-10 lg:grid-cols-[auto_1fr_1fr]">
         <img
-          src="/images/profil.jpg"
+          src={site.photo}
           alt={site.name}
           width={799}
           height={800}

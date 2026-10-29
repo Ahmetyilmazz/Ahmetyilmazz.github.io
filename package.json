@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "images": "node scripts/optimize-images.mjs",
     "preview": "serve out -p 3000",
     "start": "npm run preview",
     "deploy": "npm run build && echo 'Build tamamlandı, out/ dizinini deploy edin'"
@@ -22,6 +23,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "serve": "^14.2.5",
+    "sharp": "^0.34.4",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

@@ -107,5 +107,22 @@
 
 **Doğrulama**: `npx tsc --noEmit` hatasız, `npx next build` başarılı; koyu tema 1440 px, açık tema 1280 px ve 600 px ekran görüntüleri incelendi.
 
+## 2026-10-29 — Görsel optimizasyonu (PNG/JPG → WebP)
+
+**Ne değişti**
+1. `scripts/optimize-images.mjs` ve `npm run images`: `public/images` altındaki PNG/JPG'leri WebP'ye çevirir, klasöre göre en büyük genişliği uygular (proje 1600 px, sertifika 1200 px, ikon 256 px), dosya adlarını ASCII'ye çevirir, 192 px avatar üretir.
+2. `sharp` açık devDependency olarak eklendi.
+3. Tüm içerik yolları `.webp` dosyalarına güncellendi; Türkçe karakterli iki sertifika dosya adı ASCII oldu.
+4. Proje görseli boyutu `projectImageSize` sabitinde toplandı (önceden 4 yerde tekrarlanıyordu).
+5. Eski 30 PNG/JPG dosyası silindi (git geçmişinde duruyor).
+
+**Neden**: `public/images` 24 MB'tı; sayfa açılışını en çok yavaşlatan şeydi.
+
+**Sonuç**: `public/images` 24 MB → 1.5 MB.
+
+**Dosyalar**: `scripts/optimize-images.mjs`, `package.json`, `package-lock.json`, `src/content/*`, `src/components/sections/{Hero,About}.tsx`, `src/components/projects/ProjectCard.tsx`, `src/app/[locale]/projects/[slug]/page.tsx`, `public/images/**`
+
+**Doğrulama**: Koddaki 31 görsel yolunun hepsinin dosyası mevcut (script ile kontrol edildi); örnek görsel gözle incelendi; `npx tsc --noEmit` ve `npx next build` başarılı.
+
 **Sonraki aşama**
 5. Görsel/video optimizasyonu (PNG → WebP, video sıkıştırma), yeni OG görseli, sitemap/robots, JSON-LD, README

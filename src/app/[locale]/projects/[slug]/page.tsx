@@ -6,7 +6,7 @@ import { FaGithub, FaGooglePlay } from "react-icons/fa6";
 import { playStoreUrl } from "@/content/apps";
 import { format, getDictionary } from "@/i18n";
 import { resolveLocale, type LocaleParams } from "@/i18n/params";
-import { getProject, projects } from "@/content/projects";
+import { getProject, projectImageSize, projects } from "@/content/projects";
 import { buildMetadata } from "@/lib/metadata";
 import { routes, sectionIds } from "@/lib/routes";
 import Container from "@/components/ui/Container";
@@ -95,8 +95,7 @@ export default async function ProjectPage({ params }: ProjectParams) {
           <img
             src={project.image}
             alt={project.title[locale]}
-            width={1920}
-            height={1440}
+            {...projectImageSize}
             fetchPriority="high"
             className="w-full rounded-3xl border border-line shadow-showcase"
           />
