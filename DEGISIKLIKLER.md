@@ -200,6 +200,18 @@
 
 **Doğrulama**: Build çıktısına konan geçici bir test sayfasıyla Edge headless'ta adım adım test edildi: `/tr/` → proje → EN → geri sonucu `/en/` (tercih `en`); tercih `tr` iken `/en/certificates/` doğrudan açıldığında EN'de kalıyor ve tercih `en` oluyor.
 
+## 2026-10-29 — Dil değişince temanın sıfırlanması düzeltildi
+
+**Sorun**: Açık temadayken dil değiştirilince sayfa koyu temaya dönüyordu (kayıtlı tercih "light" kalmasına rağmen).
+
+**Neden**: Dil parametresi değişince Next.js `<html>` etiketini yeniden kuruyor ve React, kendi koymadığı `data-theme` özelliğini temizliyor. Tema düğmesi de yeniden kurulduğunda kayıtlı temayı yeniden uygulamıyordu.
+
+**Ne değişti**: `ThemeToggle` her kurulduğunda kayıtlı temayı okuyup `<html>`'e ekran çizilmeden (`useLayoutEffect`) yeniden uyguluyor; tema uygulama mantığı `applyTheme` fonksiyonunda toplandı.
+
+**Dosyalar**: `src/components/layout/ThemeToggle.tsx`
+
+**Doğrulama**: Geçici test sayfasıyla Edge headless'ta: açık tema → dil EN → tema açık kalıyor; tema koyu → dil EN kalıyor; dil TR → tema koyu kalıyor. Düzeltmeden önce aynı test temanın sıfırlandığını gösterdi.
+
 ## Açık kalan işler
 - Demo videoları (~100 MB) sıkıştırılmalı; bilgisayarda `ffmpeg` yok.
 - GoatCounter ziyaretçi sayacı (kullanıcının site kodu bekleniyor).
