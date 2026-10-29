@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { FaGithub, FaGooglePlay } from "react-icons/fa6";
 import { playStoreUrl } from "@/content/apps";
-import { getDictionary } from "@/i18n";
+import { format, getDictionary } from "@/i18n";
 import { resolveLocale, type LocaleParams } from "@/i18n/params";
 import { getProject, projects } from "@/content/projects";
 import { buildMetadata } from "@/lib/metadata";
@@ -68,6 +68,11 @@ export default async function ProjectPage({ params }: ProjectParams) {
               {project.platform[locale]}
             </span>
             <h1 className="font-display text-4xl font-extrabold leading-tight sm:text-5xl">{project.title[locale]}</h1>
+            {project.developedFor && (
+              <span className="w-fit rounded-full border border-accent/40 bg-accent/10 px-3 py-1 text-sm font-semibold text-accent">
+                {format(apps.developedFor, { company: project.developedFor })}
+              </span>
+            )}
             <p className="text-lg text-muted">{project.summary[locale]}</p>
             <div className="flex flex-wrap gap-3">
               {project.playStore && (
@@ -75,9 +80,11 @@ export default async function ProjectPage({ params }: ProjectParams) {
                   <FaGooglePlay size={15} /> {apps.open}
                 </ButtonLink>
               )}
-              <ButtonLink href={project.github} variant={project.playStore ? "ghost" : "primary"} external>
-                <FaGithub size={16} /> {dict.source}
-              </ButtonLink>
+              {project.github && (
+                <ButtonLink href={project.github} variant={project.playStore ? "ghost" : "primary"} external>
+                  <FaGithub size={16} /> {dict.source}
+                </ButtonLink>
+              )}
               {project.video && (
                 <ButtonLink href="#demo" variant="ghost">
                   {dict.watchDemo}

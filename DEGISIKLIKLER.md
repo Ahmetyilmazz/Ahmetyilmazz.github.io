@@ -76,5 +76,19 @@
 
 **Doğrulama**: `npx tsc --noEmit` hatasız, `npx next build` başarılı, `out/tr/projects/learn-english/` üretildi.
 
+## 2026-10-29 — ORELTEK uygulamaları ve Görevlerim düzenlemesi
+
+**Ne değişti**
+1. ORELTEK geliştirici hesabındaki 3 uygulama eklendi: Görevlerim: Çocuk Ödül Tablosu (EN: MyRoutines), ORELTEK Tamga, Solo Test: Zeka Oyunu (EN: Peg Solitaire). Metinler mağazadaki resmi TR/EN açıklamalar.
+2. Uygulamalar bölümü iki gruba ayrıldı: "Kendi yayınladığım uygulamalar" ve "ORELTEK için geliştirdiğim uygulamalar"; her grubun kendi geliştirici sayfası bağlantısı var. ORELTEK kartlarında "ORELTEK için geliştirildi" ibaresi görünür.
+3. Uygulama ikonu dile göre değişebilir (Görevlerim TR / MyRoutines EN ikonları). `sameInAll` yardımcısı eklendi.
+4. Görevlerim projesi: GitHub linki kaldırıldı (repoda kaynak kod yok, yalnızca görseller var), Google Play bağlantısı ve "ORELTEK için geliştirildi" etiketi eklendi, EN adı MyRoutines oldu. `github` alanı isteğe bağlı yapıldı.
+
+**Neden**: Kullanıcının isteği; şirket adına geliştirilen uygulamaların açıkça belirtilmesi.
+
+**Dosyalar**: `src/content/apps.ts`, `src/content/projects.ts`, `src/i18n/config.ts`, `src/i18n/dictionaries/*`, `src/components/sections/PlayApps.tsx`, `src/components/projects/ProjectCard.tsx`, `src/app/[locale]/projects/[slug]/page.tsx`, `public/images/apps/*`
+
+**Doğrulama**: `npx tsc --noEmit` hatasız, `npx next build` başarılı; çıktıda Görevlerim GitHub linkinin olmadığı ve ORELTEK ibaresinin iki dilde de bulunduğu kontrol edildi.
+
 **Sonraki aşama**
 5. Görsel/video optimizasyonu (PNG → WebP, video sıkıştırma), yeni OG görseli, sitemap/robots, JSON-LD, README

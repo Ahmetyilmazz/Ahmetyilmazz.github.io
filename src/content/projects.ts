@@ -1,4 +1,5 @@
 import type { Localized } from "@/i18n/config";
+import { oreltek } from "./apps";
 
 export interface Project {
   slug: string;
@@ -8,9 +9,12 @@ export interface Project {
   problem: Localized;
   solution: Localized;
   technologies: string[];
-  github: string;
+  /** Yalnızca kaynak kod herkese açıksa doldurulur. */
+  github?: string;
   /** Google Play paket adı; uygulama mağazada yayındaysa doldurulur. */
   playStore?: string;
+  /** Bir şirket adına geliştirildiyse şirketin adı. */
+  developedFor?: string;
   image: string;
   video?: string;
   featured?: boolean;
@@ -62,7 +66,7 @@ export const projects: Project[] = [
   },
   {
     slug: "gorevlerim",
-    title: { tr: "Görevlerim", en: "My Tasks" },
+    title: { tr: "Görevlerim", en: "MyRoutines" },
     platform: { tr: "Tablet · Aile", en: "Tablet · Family" },
     summary: {
       tr: "Çocukların günlük görevlerini oyunlaştırarak takip eden, ebeveyn ve çocuk için tablet uygulaması.",
@@ -77,7 +81,8 @@ export const projects: Project[] = [
       en: "Parents assign daily, weekly and monthly tasks, and children earn points and badges as they complete them. Confetti and Lottie animations keep them motivated, and data is stored on the device with SQLite.",
     },
     technologies: ["Flutter", "sqflite", "Provider", "shared_preferences", "image_picker", "geolocator", "confetti", "Lottie"],
-    github: "https://github.com/Ahmetyilmazz/Gorevlerim",
+    playStore: "com.oreltek.gorevlerim",
+    developedFor: oreltek.name,
     image: "/images/cocuk_takip.png",
     featured: true,
   },

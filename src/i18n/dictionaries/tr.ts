@@ -32,7 +32,12 @@ export const tr = {
     intro: "Fikirden mağaza yayınına kadar geliştirdiğim ve şu an indirilebilen uygulamalar.",
     open: "Google Play'de aç",
     all: "Geliştirici sayfası",
-    categories: { game: "Oyun", education: "Eğitim" },
+    groups: {
+      personal: "Kendi yayınladığım uygulamalar",
+      company: "{company} için geliştirdiğim uygulamalar",
+    },
+    developedFor: "{company} için geliştirildi",
+    categories: { game: "Oyun", education: "Eğitim", family: "Aile", tools: "Araçlar" },
   },
   services: {
     eyebrow: "Hizmetler",

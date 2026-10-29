@@ -34,7 +34,12 @@ export const en: Dictionary = {
     intro: "Apps I built from idea to store release, available to download today.",
     open: "Open on Google Play",
     all: "Developer page",
-    categories: { game: "Game", education: "Education" },
+    groups: {
+      personal: "Apps I published",
+      company: "Apps I developed for {company}",
+    },
+    developedFor: "Developed for {company}",
+    categories: { game: "Game", education: "Education", family: "Family", tools: "Tools" },
   },
   services: {
     eyebrow: "Services",
