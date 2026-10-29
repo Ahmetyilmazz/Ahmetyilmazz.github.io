@@ -94,26 +94,6 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    slug: "ai-content-automation",
-    title: { tr: "Yapay Zeka İçerik Otomasyonu", en: "AI Content Automation" },
-    platform: { tr: "Yapay Zeka · Otomasyon", en: "AI · Automation" },
-    summary: {
-      tr: "Yerelde çalışan Gemma 4 modeliyle LinkedIn gönderileri ve YouTube Shorts videoları hazırlayıp planlı olarak yayınlayan otomasyon.",
-      en: "Automation that drafts LinkedIn posts and YouTube Shorts with a locally running Gemma 4 model and publishes them on schedule.",
-    },
-    problem: {
-      tr: "Düzenli içerik üretmek çok zaman alıyordu: Flutter dünyasındaki gelişmeleri takip etmek, bunlardan paylaşım hazırlamak ve kısa videolar üretmek her gün ayrı bir iş demekti.",
-      en: "Producing content regularly took a lot of time: following what is new in Flutter, turning it into posts and making short videos was a separate job every day.",
-    },
-    solution: {
-      tr: "Docker üzerinde n8n ile iki iş akışı kurdum. İlkinde RSS kaynaklarından Flutter/Dart gündemindeki konular alınıyor, Ollama ile çalışan Gemma 4 bu konuya kısa bir LinkedIn gönderisi yazıyor ve gönderi planlanan saatte paylaşılıyor. İkincisinde Gemma 4 senaryoyu ve metni hazırlıyor, MoneyPrinterTurbo ücretsiz stok görsel ve videolarla kısa videoyu üretiyor ve video YouTube Shorts olarak yükleniyor. Model dahil her şey yerelde çalıştığı için API maliyeti yok ve metin üretimi için harici bir yapay zeka servisine veri gönderilmiyor.",
-      en: "I built two workflows with n8n running on Docker. In the first, trending Flutter/Dart topics are pulled from RSS feeds, Gemma 4 running on Ollama writes a short LinkedIn post about the topic, and the post is published at a scheduled time. In the second, Gemma 4 writes the script and narration, MoneyPrinterTurbo renders a short video with free stock images and footage, and the video is uploaded as a YouTube Short. Everything, including the model, runs locally: there are no API costs and no data is sent to an external AI service to generate the text.",
-    },
-    technologies: ["n8n", "Ollama", "Gemma 4", "Docker", "MoneyPrinterTurbo"],
-    image: { tr: "/images/ai-automation-tr.webp", en: "/images/ai-automation-en.webp" },
-    featured: true,
-  },
-  {
     slug: "learn-english",
     title: { tr: "Learn English", en: "Learn English" },
     platform: { tr: "Mobil · Eğitim", en: "Mobile · Education" },
@@ -134,6 +114,47 @@ export const projects: Project[] = [
     playStore: "app.ahmetylmzzz.words",
     image: sameInAll("/images/english_learn.webp"),
     video: "/videos/english_word.mp4",
+    featured: true,
+  },
+  {
+    slug: "linkedin-content-automation",
+    title: { tr: "LinkedIn İçerik Otomasyonu", en: "LinkedIn Content Automation" },
+    platform: { tr: "Yapay Zeka · Otomasyon", en: "AI · Automation" },
+    summary: {
+      tr: "Flutter gündemini takip edip yerelde çalışan Gemma 4 ile LinkedIn gönderisi yazan ve planlanan saatte paylaşan otomasyon.",
+      en: "An automation that follows Flutter news, writes LinkedIn posts with a locally running Gemma 4 model and publishes them on schedule.",
+    },
+    problem: {
+      tr: "LinkedIn'de düzenli paylaşım yapmak için Flutter ve Dart dünyasındaki gelişmeleri her gün takip etmek, konu seçmek ve gönderi yazmak ciddi zaman alıyordu.",
+      en: "Posting regularly on LinkedIn meant following Flutter and Dart news every day, picking a topic and writing a post, which took a lot of time.",
+    },
+    solution: {
+      tr: "Docker üzerinde n8n ile tamamen yerelde çalışan bir iş akışı kurdum. Tanınmış teknoloji sitelerinin RSS akışlarından Flutter/Dart gündemindeki konular alınıyor, Ollama üzerinde çalışan Gemma 4 seçilen konu hakkında kısa bir LinkedIn gönderisi yazıyor ve gönderi planlanan saatte paylaşılıyor. Model dahil her şey yerelde çalıştığı için API maliyeti yok.",
+      en: "I built a fully local workflow with n8n running on Docker. Trending Flutter/Dart topics are pulled from the RSS feeds of well-known tech sites, Gemma 4 running on Ollama writes a short LinkedIn post about the chosen topic, and the post is published at a scheduled time. Everything, including the model, runs locally, so there are no API costs.",
+    },
+    technologies: ["n8n", "Ollama", "Gemma 4", "Docker", "RSS"],
+    image: { tr: "/images/linkedin-automation-tr.webp", en: "/images/linkedin-automation-en.webp" },
+    featured: true,
+  },
+  {
+    slug: "youtube-shorts-automation",
+    title: { tr: "YouTube Shorts Otomasyonu", en: "YouTube Shorts Automation" },
+    platform: { tr: "Yapay Zeka · Otomasyon", en: "AI · Automation" },
+    summary: {
+      tr: "Senaryosunu yerelde çalışan Gemma 4'ün yazdığı YouTube Shorts videolarını üretip paylaşan otomasyon.",
+      en: "An automation that produces and publishes YouTube Shorts, with scripts written by a locally running Gemma 4 model.",
+    },
+    problem: {
+      tr: "Kısa video üretmek senaryo yazma, seslendirme, görsel seçme ve kurgu gibi tekrar eden adımlardan oluşuyor; her video için bunları elle yapmak çok zaman alıyordu.",
+      en: "Making short videos involves repetitive steps such as scripting, voice-over, picking visuals and editing; doing them by hand for every video took a lot of time.",
+    },
+    solution: {
+      tr: "Docker üzerinde n8n ile tamamen yerelde çalışan bir iş akışı kurdum. Ollama üzerinde çalışan Gemma 4 videonun senaryosunu yazıyor, metin ücretsiz TTS servisleriyle seslendiriliyor ve seslendirme, belirlediğim görsel ve videolarla birleştirilerek kısa video üretiliyor. Hazır video YouTube Shorts olarak paylaşılıyor. Model dahil her şey yerelde çalıştığı için API maliyeti yok.",
+      en: "I built a fully local workflow with n8n running on Docker. Gemma 4 running on Ollama writes the video script, free TTS services turn it into a voice-over, and the voice-over is combined with images and clips I selected to render a short video. The finished video is published as a YouTube Short. Everything, including the model, runs locally, so there are no API costs.",
+    },
+    technologies: ["n8n", "Ollama", "Gemma 4", "Docker", "TTS"],
+    image: { tr: "/images/youtube-automation-tr.webp", en: "/images/youtube-automation-en.webp" },
+    featured: true,
   },
   {
     slug: "servis-takip",

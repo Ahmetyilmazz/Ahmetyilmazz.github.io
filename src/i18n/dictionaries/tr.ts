@@ -60,6 +60,11 @@ export const tr = {
         text: "Flutter Desktop ve Electron.js ile Windows, macOS ve Linux için uygulamalar.",
         points: ["Takip ve yönetim yazılımları", "Yerel veri ve raporlama", "Mobil uygulamayla ortak kod"],
       },
+      ai: {
+        title: "Yapay Zeka ve Otomasyon",
+        text: "Tekrar eden işleri yapay zeka destekli iş akışlarıyla otomatikleştiriyorum.",
+        points: ["n8n ile iş akışı otomasyonu", "Yerelde çalışan dil modelleri (Ollama)", "Uygulamalara yapay zeka özellikleri"],
+      },
     },
     cta: "Projenizi konuşalım",
   },

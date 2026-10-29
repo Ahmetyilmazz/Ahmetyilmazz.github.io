@@ -262,6 +262,21 @@
 
 **Doğrulama**: `npx tsc --noEmit` ve `npm run build` başarılı (29 sayfa); projeler bölümü, EN detay sayfası ve Hakkımda bölümü ekran görüntüsüyle incelendi.
 
+## 2026-10-29 — Otomasyon projesi ikiye ayrıldı, hizmetlere yapay zeka eklendi
+
+**Ne değişti**
+1. "Yapay Zeka İçerik Otomasyonu" projesi kullanıcının anlatımına göre iki ayrı projeye ayrıldı:
+   - **LinkedIn İçerik Otomasyonu** (`/projects/linkedin-content-automation/`): teknoloji sitelerinin RSS akışlarından Flutter/Dart konuları → Gemma 4 (Ollama) ile gönderi → planlı paylaşım.
+   - **YouTube Shorts Otomasyonu** (`/projects/youtube-shorts-automation/`): Gemma 4 ile senaryo → ücretsiz TTS ile seslendirme → seçilen görsel ve videolarla kurgu → Shorts paylaşımı. MoneyPrinterTurbo artık anlatılmıyor (kullanıcının yeni açıklamasında yok).
+   - İkisinde de "Docker üzerinde n8n, model dahil her şey yerelde, API maliyeti yok" vurgusu var.
+2. Her proje için ayrı TR/EN kapak diyagramı (`linkedin-automation-*.webp`, `youtube-automation-*.webp`); eski birleşik kapak silindi.
+3. Öne çıkan projeler 6 oldu (Learn English de eklendi) ve vitrin 3×2 düzene alındı; diğer 3 proje alttaki satırı tam dolduruyor. Proje sırası öne çıkanlar önde olacak şekilde düzenlendi.
+4. Hizmetlere dördüncü kart "Yapay Zeka ve Otomasyon" eklendi (n8n iş akışları, yerel dil modelleri, uygulamalara yapay zeka özellikleri); hizmet ızgarası geniş ekranda 4 sütun.
+
+**Dosyalar**: `src/content/projects.ts`, `src/components/sections/{Projects,Services}.tsx`, `src/i18n/dictionaries/*`, `public/images/{linkedin,youtube}-automation-{tr,en}.webp`, `public/images/ai-automation-{tr,en}.webp` (silindi)
+
+**Doğrulama**: `npx tsc --noEmit` ve `npm run build` başarılı (31 sayfa, 9 proje sayfası); kodda eski projeye referans kalmadığı kontrol edildi; hizmetler ve projeler bölümü ekran görüntüsüyle incelendi.
+
 ## Açık kalan işler
 - Demo videoları (~100 MB) sıkıştırılmalı; bilgisayarda `ffmpeg` yok.
 - GoatCounter ziyaretçi sayacı (kullanıcının site kodu bekleniyor).

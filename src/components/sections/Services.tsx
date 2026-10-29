@@ -1,11 +1,11 @@
-import { ArrowRight, Globe, Monitor, Smartphone } from "lucide-react";
+import { ArrowRight, Bot, Globe, Monitor, Smartphone } from "lucide-react";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n";
 import { routes, sectionIds } from "@/lib/routes";
 import Section from "@/components/ui/Section";
 import ButtonLink from "@/components/ui/ButtonLink";
 
-const icons = { mobile: Smartphone, web: Globe, desktop: Monitor };
+const icons = { mobile: Smartphone, web: Globe, desktop: Monitor, ai: Bot };
 
 export default function Services({ locale, services }: { locale: Locale; services: Dictionary["services"] }) {
   const items = (Object.keys(icons) as (keyof typeof icons)[]).map((key) => ({
@@ -16,7 +16,7 @@ export default function Services({ locale, services }: { locale: Locale; service
 
   return (
     <Section id={sectionIds.services} eyebrow={services.eyebrow} title={services.title} intro={services.intro}>
-      <ul className="grid gap-5 md:grid-cols-3">
+      <ul className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
         {items.map(({ key, Icon, title, text, points }) => (
           <li
             key={key}

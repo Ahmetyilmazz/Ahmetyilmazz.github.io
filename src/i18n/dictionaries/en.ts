@@ -62,6 +62,11 @@ export const en: Dictionary = {
         text: "Apps for Windows, macOS and Linux with Flutter Desktop and Electron.js.",
         points: ["Tracking and management tools", "Local data and reporting", "Shared code with the mobile app"],
       },
+      ai: {
+        title: "AI & Automation",
+        text: "I automate repetitive work with AI-powered workflows.",
+        points: ["Workflow automation with n8n", "Locally hosted language models (Ollama)", "AI features inside your apps"],
+      },
     },
     cta: "Let's talk about your project",
   },
