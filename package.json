@@ -5,10 +5,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "typecheck": "tsc --noEmit",
     "images": "node scripts/optimize-images.mjs",
     "preview": "serve out -p 3000",
-    "start": "npm run preview",
-    "deploy": "npm run build && echo 'Build tamamlandı, out/ dizinini deploy edin'"
+    "start": "npm run preview"
   },
   "dependencies": {
     "lucide-react": "^0.545.0",

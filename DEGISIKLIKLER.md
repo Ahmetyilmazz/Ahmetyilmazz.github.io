@@ -140,5 +140,19 @@
 
 **Doğrulama**: `npx next build` 27 sayfa üretti; `og.png` dosyaları 1200×630 PNG; ana sayfa, sertifikalar ve proje sayfasında `og:image` etiketi kontrol edildi; OG görseli ve favicon gözle incelendi.
 
-**Sonraki aşama**
-5. Görsel/video optimizasyonu (PNG → WebP, video sıkıştırma), yeni OG görseli, sitemap/robots, JSON-LD, README
+## 2026-10-29 — README ve npm script'leri
+
+**Ne değişti**
+1. README, create-next-app varsayılan metni yerine projeyi anlatan, içerik güncelleme rehberi içeren bir dokümana dönüştü (kısa İngilizce özetle).
+2. `package.json`: anlamsız `deploy` script'i (yalnızca ekrana yazı basıyordu) kaldırıldı, `typecheck` eklendi.
+
+**Dosyalar**: `README.md`, `package.json`
+
+**Doğrulama**: `npm run typecheck` ve `npm run build` başarılı.
+
+## Açık kalan işler
+- Demo videoları (~100 MB) sıkıştırılmalı; bilgisayarda `ffmpeg` yok.
+- GoatCounter ziyaretçi sayacı (kullanıcının site kodu bekleniyor).
+- Google Search Console doğrulaması (isteğe bağlı).
+- ESLint kurulumu ve CI'da lint/typecheck adımı.
+- Güncel profil fotoğrafı (mevcut fotoğraf 2021 tarihli).
