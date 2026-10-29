@@ -4,6 +4,9 @@ import { oreltek } from "./apps";
 /** Tüm proje görselleri 4:3 oranında ve bu boyutta üretilir (npm run images). */
 export const projectImageSize = { width: 1600, height: 1200 } as const;
 
+/** Projelerde paket listesi yerine yalnızca dil ve framework gösterilir. */
+const flutterStack = ["Dart", "Flutter"];
+
 export interface Project {
   slug: string;
   title: Localized;
@@ -41,7 +44,7 @@ export const projects: Project[] = [
       tr: "Flutter ve Firebase ile gerçek zamanlı mesajlaşma, WebRTC ile sesli/görüntülü arama, sesli mesaj, medya paylaşımı ve emoji desteği geliştirdim. Avatar seçimi ve takma adlarla deneyimi daha eğlenceli hale getirdim.",
       en: "I built real-time messaging with Flutter and Firebase, voice/video calls with WebRTC, voice notes, media sharing and emoji support. Avatars and nicknames make the experience more playful.",
     },
-    technologies: ["Flutter", "Firebase", "flutter_webrtc", "flutter_sound", "Provider", "image_picker", "video_player", "emoji_picker_flutter"],
+    technologies: flutterStack,
     github: "https://github.com/Ahmetyilmazz/Mesajlasma-Uygulamasi",
     image: sameInAll("/images/chatapp.webp"),
     featured: true,
@@ -62,7 +65,7 @@ export const projects: Project[] = [
       tr: "Uygulama anlık hızı, alınan yolu ve geçen süreyi takip eder. Seçilen gişeler arasındaki mesafeye göre normal, güvenli ve sınır sürelerini hesaplayıp sürücüye harita üzerinde gösterir.",
       en: "The app tracks live speed, distance travelled and elapsed time. It calculates normal, safe and limit times for the chosen toll gates and shows them on a map.",
     },
-    technologies: ["Flutter", "flutter_map", "geolocator", "geocoding", "latlong2", "http", "JSON"],
+    technologies: flutterStack,
     github: "https://github.com/Ahmetyilmazz/Otoyol-Rehberi",
     image: sameInAll("/images/otoyol_rehberim.webp"),
     video: "/videos/otoyol_rehberim.mp4",
@@ -84,7 +87,7 @@ export const projects: Project[] = [
       tr: "Ebeveynler her çocuk için günlük, haftalık ve aylık görevler tanımlar; çocuklar tamamladıkça yıldız toplar ve yıldızları ödüllere dönüştürür. Takvim ve istatistik ekranlarıyla ilerleme birlikte izlenir, gün sonu kutlama animasyonuyla motivasyon artar. Hesap gerekmez; tüm veriler cihazda kalır, reklam ve takip yoktur.",
       en: "Parents set daily, weekly and monthly tasks for each child; kids collect stars as they finish them and turn stars into rewards. Calendar and statistics screens let families follow progress together, and an end-of-day celebration keeps kids motivated. No account is needed: all data stays on the device, with no ads or tracking.",
     },
-    technologies: ["Flutter", "sqflite", "Provider", "shared_preferences", "image_picker", "geolocator", "confetti", "Lottie"],
+    technologies: flutterStack,
     playStore: "com.oreltek.gorevlerim",
     developedFor: oreltek.name,
     image: { tr: "/images/gorevlerim-tr.webp", en: "/images/gorevlerim-en.webp" },
@@ -106,7 +109,7 @@ export const projects: Project[] = [
       tr: "Kelimeleri kartlar halinde tekrar ettiren, verileri cihazda SQLite ile saklayan bir uygulama geliştirdim. Google AdMob entegrasyonuyla gelir modeli de denedim.",
       en: "I built an app that reviews words as flashcards and stores data on the device with SQLite. I also tried a revenue model with Google AdMob.",
     },
-    technologies: ["Flutter", "SQLite", "Google AdMob", "State Management"],
+    technologies: flutterStack,
     github: "https://github.com/Ahmetyilmazz/English-Learn",
     playStore: "app.ahmetylmzzz.words",
     image: sameInAll("/images/english_learn.webp"),
@@ -128,7 +131,7 @@ export const projects: Project[] = [
       tr: "Kullanıcıların ürün ekleyip güncelleyebildiği ve satışları takip edebildiği bir uygulama geliştirdim. Kimlik doğrulama ve veriler Firebase ile yönetiliyor.",
       en: "I built an app where users add and update products and track sales. Authentication and data are handled with Firebase.",
     },
-    technologies: ["Flutter", "Firebase Authentication", "Cloud Firestore", "REST API"],
+    technologies: flutterStack,
     github: "https://github.com/Ahmetyilmazz/ServisTakip",
     image: sameInAll("/images/servis_takip.webp"),
     video: "/videos/servis_takip.mp4",
@@ -149,7 +152,7 @@ export const projects: Project[] = [
       tr: "Haberler, yaklaşan maçlar, oyuncular, fikstür ve anlık skorları tek bir uygulamada topladım. Google ile giriş ve REST API üzerinden canlı veri kullanılıyor.",
       en: "I brought news, upcoming matches, players, fixtures and live scores into one app, with Google sign-in and live data from a REST API.",
     },
-    technologies: ["Flutter", "Google Auth", "REST API", "UI/UX"],
+    technologies: flutterStack,
     github: "https://github.com/Ahmetyilmazz/TeamApp",
     image: sameInAll("/images/team_app.webp"),
     video: "/videos/team_app.mp4",
@@ -170,7 +173,7 @@ export const projects: Project[] = [
       tr: "Token ile kimliği doğrulanan cihaz, konumunu HTTP ile sunucuya gönderir; gönderim sıklığı sunucudan gelen yanıta göre değişir. Servis arka planda çalışır, tek dokunuşla durdurulur ve sunucu bildirimleri kullanıcıya gösterilir.",
       en: "A token-authenticated device sends its location over HTTP, and the server's response sets how often it sends. The service runs in the background, stops with one tap and shows notifications from the server.",
     },
-    technologies: ["Flutter", "flutter_background", "geolocator", "geocoding", "http", "shared_preferences", "flutter_local_notifications"],
+    technologies: flutterStack,
     github: "https://github.com/Ahmetyilmazz/Instant_Location_Tracking",
     image: sameInAll("/images/anlik_konum.webp"),
   },

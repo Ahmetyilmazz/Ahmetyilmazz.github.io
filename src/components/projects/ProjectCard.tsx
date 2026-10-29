@@ -4,7 +4,6 @@ import { FaGooglePlay } from "react-icons/fa6";
 import type { Locale } from "@/i18n/config";
 import { projectImageSize, type Project } from "@/content/projects";
 import { routes } from "@/lib/routes";
-import Tag from "@/components/ui/Tag";
 
 const badgeClass =
   "inline-flex items-center gap-1.5 rounded-full bg-bg/80 px-3 py-1 text-xs font-medium backdrop-blur";
@@ -57,13 +56,6 @@ export default function ProjectCard({ project, locale, labels, compact = false }
           />
         </h3>
         <p className={`text-muted ${compact ? "line-clamp-2 text-sm" : ""}`}>{project.summary[locale]}</p>
-        {!compact && (
-          <div className="flex flex-wrap gap-2 pt-1">
-            {project.technologies.slice(0, 3).map((tech) => (
-              <Tag key={tech}>{tech}</Tag>
-            ))}
-          </div>
-        )}
         <span className="sr-only">{labels.details}</span>
       </div>
     </Link>
