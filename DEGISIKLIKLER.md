@@ -158,7 +158,7 @@
 
 **Dosyalar**: `src/app/globals.css`
 
-**Doğrulama**: `npm run build` başarılı; localhost'ta yön kontrol edildi.
+**Doğrulama**: `npm run build` başarılı; build çıktısındaki CSS'te `infinite reverse` olduğu kontrol edildi. Hareketin yönü tarayıcıda gözle kontrol edilmedi.
 
 ## Açık kalan işler
 - Demo videoları (~100 MB) sıkıştırılmalı; bilgisayarda `ffmpeg` yok.
