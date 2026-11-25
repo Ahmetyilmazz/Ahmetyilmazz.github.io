@@ -24,13 +24,13 @@ export const oreltek = {
 const personalApps: PlayApp[] = [
   {
     packageId: "app.ahmetylmzzz.words",
-    name: sameInAll("Learn English"),
+    name: { tr: "Kelengo: İngilizce Kelimeler", en: "Kelengo: English Vocabulary" },
     tagline: {
-      tr: "Kelimeleri kartlarla öğren! Sesli dinleme, testler ve detaylı sonuç analizi.",
-      en: "Learn words with flashcards! Audio listening, tests and detailed result analysis.",
+      tr: "İngilizce kelime ezberle: A1–C2 arası 6.000 kelime, telaffuz, test. İnternetsiz.",
+      en: "Learn English words from A1 to C2: 6,000 words, audio, quizzes. Works offline.",
     },
     category: "education",
-    icon: sameInAll("/images/apps/oxford-4000.webp"),
+    icon: sameInAll("/images/apps/kelengo.webp"),
   },
   {
     packageId: "com.ahmetylmzzz.learnWord",
@@ -96,6 +96,17 @@ const companyApps: PlayApp[] = [
     },
     category: "game",
     icon: sameInAll("/images/apps/oreltek-solo-test.webp"),
+    developedFor: oreltek.name,
+  },
+  {
+    packageId: "com.oreltek.bocekoyunu",
+    name: { tr: "Cöcük Böcük: Hamam Böceği Avı", en: "Cöcük Böcük: Cockroach Smash" },
+    tagline: {
+      tr: "Taraftarı, uykucusu, fenomeniyle hamam böcekleri evi bastı! Terliği kap, vur!",
+      en: "The fan, the sleepyhead, the influencer: roaches took the house. Grab a slipper!",
+    },
+    category: "game",
+    icon: sameInAll("/images/apps/cocuk-bocuk.webp"),
     developedFor: oreltek.name,
   },
 ];

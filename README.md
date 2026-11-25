@@ -31,6 +31,7 @@ Next.js 16 (App Router, statik export) · React 19 · TypeScript · Tailwind CSS
 | `npm run typecheck` | TypeScript kontrolü |
 | `npm run images` | `public/images` altındaki PNG/JPG görselleri WebP'ye çevirir |
 | `npm run covers` | Otomasyon projelerinin TR/EN kapak diyagramlarını yeniden üretir |
+| `npm run store-cover -- --out <cikti.webp> <ekran1> <ekran2> <ekran3>` | Üç mağaza ekran görüntüsünden 1600×1200 proje kapağı üretir (`--from` / `--to` ile zemin rengi) |
 
 ## Yeni bilgisayarda kurulum
 

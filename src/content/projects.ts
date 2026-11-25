@@ -95,25 +95,23 @@ export const projects: Project[] = [
   },
   {
     slug: "learn-english",
-    title: { tr: "Learn English", en: "Learn English" },
+    title: sameInAll("Kelengo"),
     platform: { tr: "Mobil · Eğitim", en: "Mobile · Education" },
     summary: {
-      tr: "Düzenli tekrar ile İngilizce kelime öğrenmeyi kolaylaştıran kart uygulaması.",
-      en: "A flashcard app that makes learning English vocabulary easier through regular review.",
+      tr: "A1'den C2'ye 6.000 İngilizce kelimeyi seviye seviye öğreten, internetsiz çalışan kelime uygulaması.",
+      en: "An offline vocabulary app that teaches 6,000 English words level by level, from A1 to C2.",
     },
     problem: {
-      tr: "İngilizce öğrenirken en büyük zorluk düzenli tekrar yapmaktı. Kelimeler kısa sürede unutuluyordu.",
-      en: "While learning English, my biggest challenge was reviewing regularly. New words were quickly forgotten.",
+      tr: "İngilizce öğrenirken en büyük zorluk kelimeleri düzenli tekrar etmekti. Kelimeler kısa sürede unutuluyor, nereden başlayıp nasıl ilerleneceği de belirsiz kalıyordu.",
+      en: "My biggest challenge while learning English was reviewing words regularly. New words were quickly forgotten, and it was unclear where to start and how to progress.",
     },
     solution: {
-      tr: "Kelimeleri kartlar halinde tekrar ettiren, verileri cihazda SQLite ile saklayan bir uygulama geliştirdim. Google AdMob entegrasyonuyla gelir modeli de denedim.",
-      en: "I built an app that reviews words as flashcards and stores data on the device with SQLite. I also tried a revenue model with Google AdMob.",
+      tr: "Yaklaşık 6.000 kelimeyi A1'den C2'ye sıralanmış 120 seviyeye böldüm; her kelime anlamı, örnek cümlesi ve hızı ayarlanabilen sesli telaffuzuyla geliyor. Hızlı testler, süreli sınav modu, favoriler, ilerleme istatistikleri ve günlük hatırlatıcı ekledim. Kelimeler, testler ve seslendirme internet olmadan çalışıyor; uygulama 11 dilde kullanılabiliyor.",
+      en: "I organised about 6,000 words into 120 levels ordered from A1 to C2; every word comes with its meaning, an example sentence and audio pronunciation with adjustable speed. I added quick quizzes, a timed exam mode, favorites, progress statistics and a daily reminder. Words, quizzes and audio work offline, and the app is available in 11 languages.",
     },
     technologies: flutterStack,
-    github: "https://github.com/Ahmetyilmazz/English-Learn",
     playStore: "app.ahmetylmzzz.words",
-    image: sameInAll("/images/english_learn.webp"),
-    video: "/videos/english_word.mp4",
+    image: { tr: "/images/kelengo-tr.webp", en: "/images/kelengo-en.webp" },
     featured: true,
   },
   {

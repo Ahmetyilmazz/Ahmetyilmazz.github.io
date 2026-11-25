@@ -8,6 +8,7 @@
     "typecheck": "tsc --noEmit",
     "images": "node scripts/optimize-images.mjs",
     "covers": "node scripts/generate-automation-covers.mjs",
+    "store-cover": "node scripts/compose-store-cover.mjs",
     "preview": "serve out -p 3000",
     "start": "npm run preview"
   },

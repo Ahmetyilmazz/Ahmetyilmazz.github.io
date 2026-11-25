@@ -333,6 +333,19 @@
 
 **Doğrulama**: `npm run covers` mevcut kapak görsellerini birebir aynı üretti (MD5 karşılaştırması); `npm run typecheck` ve `npm run build` başarılı.
 
+## 2026-11-25 — Google Play uygulamaları güncellendi: Kelengo ve Cöcük Böcük
+
+**Ne değişti**
+1. **Learn English → Kelengo.** Uygulama mağazada yenilendiği için uygulamalar bölümünde ad ("Kelengo: İngilizce Kelimeler" / "Kelengo: English Vocabulary"), kısa açıklama ve ikon güncellendi.
+2. **Kelengo projesi.** Başlık, özet ve çözüm metni yeni uygulamaya göre yazıldı (A1–C2 arası 120 seviye, ~6.000 kelime, sesli telaffuz, testler ve süreli sınav, favoriler, ilerleme, günlük hatırlatıcı, internetsiz, 11 dil). Mağaza ekranlarından yeni TR/EN kapak üretildi. Proje adresi değişmedi (`/projects/learn-english/`), daha önce paylaşılmış linkler kırılmasın diye.
+3. **Kaldırılanlar.** `English-Learn` GitHub reposu artık açılmıyor (404), kaynak kod linki kaldırıldı. Eski uygulamaya ait demo videosu (`english_word.mp4`, 34 MB), eski kapak ve eski ikon silindi; git geçmişinde duruyorlar.
+4. **Yeni ORELTEK uygulaması:** "Cöcük Böcük: Hamam Böceği Avı" (EN: "Cöcük Böcük: Cockroach Smash"), oyun kategorisinde, "ORELTEK için geliştirildi" ibaresiyle. ORELTEK grubu 4 uygulamaya çıktı.
+5. **Yeni script:** `scripts/compose-store-cover.mjs` (`npm run store-cover`): üç mağaza ekranından 1600×1200 proje kapağı üretir. README'ye ve yerel notlara eklendi.
+
+**Dosyalar**: `src/content/apps.ts`, `src/content/projects.ts`, `scripts/compose-store-cover.mjs`, `package.json`, `README.md`, `public/images/kelengo-{tr,en}.webp`, `public/images/apps/{kelengo,cocuk-bocuk}.webp`; silinen: `public/images/english_learn.webp`, `public/images/apps/oxford-4000.webp`, `public/videos/english_word.mp4`
+
+**Doğrulama**: Metinler ve ikonlar Google Play'den TR/EN olarak alındı. Tüm GitHub linkleri kontrol edildi (yalnızca `English-Learn` 404). Koddaki 41 medya yolunun hepsinin dosyası mevcut. `npm run typecheck` ve `npm run build` başarılı (31 sayfa). Uygulamalar bölümü, Kelengo EN detay sayfası ve projeler bölümü ekran görüntüsüyle incelendi.
+
 ## Açık kalan işler
 - Demo videoları (~100 MB) sıkıştırılabilir; bunun için `ffmpeg` ya da HandBrake gerekiyor.
 - YouTube Shorts projesindeki "tamamen yerelde" ifadesi: kullanılan TTS internet üzerinden çalışan bir servisse metin "dil modeli yerelde" olarak düzeltilmeli (kullanıcıdan teyit bekleniyor).
