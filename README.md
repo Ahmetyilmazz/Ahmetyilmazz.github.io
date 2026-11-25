@@ -1,96 +1,107 @@
-# Ahmet YILMAZ · Flutter Developer
+<div align="center">
 
-Kişisel portföy sitesi: **https://ahmetyilmazz.github.io**
+# Ahmet YILMAZ
 
-Flutter ile geliştirdiğim mobil, web ve masaüstü uygulamalar, Google Play'de yayındaki uygulamalarım, sertifikalarım ve iletişim bilgilerim. Site Türkçe ve İngilizce olarak yayında.
+**Flutter Developer · Mobile, Web & Desktop · AI Automation**
 
-> **English:** Personal portfolio of Ahmet YILMAZ, a Flutter developer. It showcases published Google Play apps, project case studies and certificates in Turkish and English. Built with Next.js (static export) and deployed to GitHub Pages.
+I design and build apps that live in your pocket, from messaging to live location tracking,
+and I automate repetitive work with locally hosted AI.
 
-## Özellikler
+[![Website](https://img.shields.io/badge/Website-ahmetyilmazz.github.io-54c5f8?style=for-the-badge)](https://ahmetyilmazz.github.io)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-ahmeeet-0a66c2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ahmeeet/)
+[![Google Play](https://img.shields.io/badge/Google_Play-Developer-34a853?style=for-the-badge&logo=googleplay&logoColor=white)](https://play.google.com/store/apps/developer?id=Ahmet+YIILMAZ)
 
-- **İki dil:** `/tr/` ve `/en/`. Kök adres, kayıtlı tercihe ya da tarayıcı diline göre yönlendirir.
-- **Koyu ve açık tema:** Koyu tema varsayılan; seçim tarayıcıda hatırlanır.
-- **Google Play uygulamaları:** Kendi yayınladığım ve ORELTEK için geliştirdiğim uygulamalar.
-- **Yapay zeka projeleri:** n8n ve yerelde çalışan dil modelleriyle (Ollama, Gemma 4) LinkedIn ve YouTube Shorts otomasyonları.
-- **Proje sayfaları:** Problem → Çözüm anlatımı, kullanılan teknolojiler, demo videosu, mağaza ve kaynak kod bağlantıları.
-- **Sertifikalar:** Kategori filtresi ve arama, doğrulama bağlantıları.
-- **SEO:** Sayfa bazlı meta veriler, `hreflang`, build sırasında üretilen paylaşım görseli, `sitemap.xml`, `robots.txt`, JSON-LD.
-- **Erişilebilirlik:** Klavyeyle gezinme, görünür odak halkası, "içeriğe geç" bağlantısı, `prefers-reduced-motion` desteği.
+<a href="https://ahmetyilmazz.github.io"><img src=".github/assets/preview.png" alt="ahmetyilmazz.github.io" width="900"></a>
 
-## Teknolojiler
+</div>
 
-Next.js 16 (App Router, statik export) · React 19 · TypeScript · Tailwind CSS 4 · lucide-react · react-icons · sharp
+## About me
 
-## Komutlar
+I graduated in Mathematics and Computer Science. Years of differential equations and abstract algebra taught me to break problems down and model them, and I bring the same approach to software.
 
-| Komut | Açıklama |
+I build apps with Flutter that reach mobile, web and desktop from a single codebase, and I care about clean architecture, readable code and interfaces people enjoy using. Lately I have also been building content and workflow automations with locally hosted large language models (Ollama) and n8n.
+
+**Open to new projects and collaborations.**
+
+## Live on Google Play
+
+| Apps I published | Apps I developed for ORELTEK |
 |---|---|
-| `npm run dev` | Geliştirme sunucusu (http://localhost:3000) |
-| `npm run build` | Statik siteyi `out/` klasörüne üretir |
-| `npm run preview` | `out/` klasörünü yerelde sunar; GitHub Pages'teki davranışa en yakın test |
-| `npm run typecheck` | TypeScript kontrolü |
-| `npm run images` | `public/images` altındaki PNG/JPG görselleri WebP'ye çevirir |
-| `npm run covers` | Otomasyon projelerinin TR/EN kapak diyagramlarını yeniden üretir |
-| `npm run store-cover -- --out <cikti.webp> <ekran1> <ekran2> <ekran3>` | Üç mağaza ekran görüntüsünden 1600×1200 proje kapağı üretir (`--from` / `--to` ile zemin rengi) |
+| [Kelengo: English Vocabulary](https://play.google.com/store/apps/details?id=app.ahmetylmzzz.words) | [MyRoutines: Kids Reward Chart](https://play.google.com/store/apps/details?id=com.oreltek.gorevlerim) |
+| [Learn Words in 11 Languages](https://play.google.com/store/apps/details?id=com.ahmetylmzzz.learnWord) | [ORELTEK Tamga](https://play.google.com/store/apps/details?id=com.oreltek.tamga) |
+| [Basic Math: Fun Adventure](https://play.google.com/store/apps/details?id=app.ahmetylmzzz.matematik) | [Peg Solitaire: Brain Puzzle](https://play.google.com/store/apps/details?id=com.oreltek_solo_test) |
+| [Solo Test](https://play.google.com/store/apps/details?id=app.ahmetylmzzz.solo_test) | [Cöcük Böcük: Cockroach Smash](https://play.google.com/store/apps/details?id=com.oreltek.bocekoyunu) |
 
-## Yeni bilgisayarda kurulum
+## Selected projects
 
-1. **Node.js 20.9 veya üstü** kurun (https://nodejs.org). Kontrol: `node -v`
-2. Proje klasöründe bağımlılıkları kurun:
-   ```
-   npm ci
-   ```
-   `node_modules`, `.next` ve `out` klasörleri taşınmaz; bu komutla yeniden oluşur.
-3. Geliştirme sunucusu: `npm run dev` → http://localhost:3000/tr/
-4. Yayına çıkacak hali test etmek için: `npm run build` ve ardından `npm run preview` → http://localhost:3000/tr/
-5. Git kimliğini kontrol edin; commit'ler sizin adınızla atılmalı:
-   ```
-   git config user.name
-   git config user.email
-   ```
-   Farklıysa yalnızca bu proje için ayarlayın: `git config user.name "Ahmet YILMAZ"` ve `git config user.email "<e-posta>"`.
+Each project has its own page on the site with the problem, the solution and the technologies used.
 
-## İçerik nasıl güncellenir
-
-İçerik arayüzden ayrıdır; çoğu güncelleme için yalnızca veri dosyalarını değiştirmek yeterlidir.
-
-| Ne | Dosya |
+| Project | What it is |
 |---|---|
-| Arayüz metinleri (TR / EN) | `src/i18n/dictionaries/tr.ts`, `en.ts` |
-| Projeler | `src/content/projects.ts` |
-| Google Play uygulamaları | `src/content/apps.ts` |
-| Sertifikalar | `src/content/certificates.ts` |
-| İletişim, sosyal bağlantılar, teknolojiler | `src/content/site.ts` |
+| [Muhabbet](https://ahmetyilmazz.github.io/en/projects/muhabbet/) | A safe messaging app with voice and video calls, designed for young users. |
+| [Highway Guide](https://ahmetyilmazz.github.io/en/projects/otoyol-rehberim/) | A driving assistant that calculates a safe speed live, based on minimum travel times between toll gates. |
+| [MyRoutines](https://ahmetyilmazz.github.io/en/projects/gorevlerim/) | A gamified chore chart that builds routines for kids with stars and rewards. *Developed for ORELTEK.* |
+| [Kelengo](https://ahmetyilmazz.github.io/en/projects/learn-english/) | An offline vocabulary app that teaches 6,000 English words level by level, from A1 to C2. |
+| [LinkedIn Content Automation](https://ahmetyilmazz.github.io/en/projects/linkedin-content-automation/) | Follows Flutter news, writes LinkedIn posts with a locally running Gemma 4 model and publishes them on schedule. |
+| [YouTube Shorts Automation](https://ahmetyilmazz.github.io/en/projects/youtube-shorts-automation/) | Produces and publishes YouTube Shorts, with scripts written by a locally running Gemma 4 model. |
 
-Yeni görsel eklerken: dosyayı `public/images` altına koyun, `npm run images` çalıştırın, oluşan `.webp` dosyasını içerikte kullanın ve orijinal PNG/JPG'yi silin.
+More projects and certificates are on the [website](https://ahmetyilmazz.github.io).
 
-EN sözlüğü TR sözlüğünün tipine bağlıdır; bir çeviri eksikse build hata verir.
+## What I work with
 
-## Proje yapısı
+| | |
+|---|---|
+| **Mobile** | Dart, Flutter, Provider, Lottie |
+| **Web** | HTML, CSS, JavaScript, React, Next.js |
+| **Desktop** | Flutter Desktop, Electron.js |
+| **Data & services** | Firebase, SQLite, REST API, JSON, Google AdMob |
+| **AI & automation** | Ollama, Gemma 4, n8n, Docker |
 
+## Services
+
+- **Mobile apps:** fast Android and iOS apps from a single Flutter codebase.
+- **Web apps:** fast, SEO-friendly and responsive websites with React and Next.js.
+- **Desktop software:** apps for Windows, macOS and Linux with Flutter Desktop and Electron.js.
+- **AI & automation:** workflow automation with n8n, locally hosted language models and AI features inside your apps.
+
+## Contact
+
+For freelance work, collaborations or to request my CV:
+
+- **Email:** ahmeet.ylmzzz@gmail.com
+- **LinkedIn:** [linkedin.com/in/ahmeeet](https://www.linkedin.com/in/ahmeeet/)
+- **Website:** [ahmetyilmazz.github.io](https://ahmetyilmazz.github.io)
+
+<details>
+<summary><strong>Türkçe</strong></summary>
+
+<br>
+
+Merhaba, ben **Ahmet YILMAZ**. Matematik-Bilgisayar bölümünden mezun oldum ve Flutter ile mobil, web ve masaüstü uygulamalar geliştiriyorum. Son dönemde yerelde çalışan büyük dil modelleri (Ollama) ve n8n ile içerik ve iş akışı otomasyonları da kuruyorum.
+
+Google Play'de kendi yayınladığım uygulamalar ve ORELTEK için geliştirdiğim uygulamalar, proje sayfaları, hizmetlerim ve sertifikalarım sitemde Türkçe ve İngilizce olarak yer alıyor: **https://ahmetyilmazz.github.io/tr/**
+
+Freelance proje, iş birliği veya CV talebi için bana e-posta (ahmeet.ylmzzz@gmail.com) ya da [LinkedIn](https://www.linkedin.com/in/ahmeeet/) üzerinden ulaşabilirsiniz.
+
+</details>
+
+<details>
+<summary><strong>About this repository</strong></summary>
+
+<br>
+
+This repository hosts the source of [ahmetyilmazz.github.io](https://ahmetyilmazz.github.io). It is built with Next.js 16, React 19, TypeScript and Tailwind CSS 4 as a fully static, bilingual (TR / EN) site, and every push to `main` is deployed to GitHub Pages by [GitHub Actions](.github/workflows/nextjs.yml).
+
+```bash
+npm ci          # install dependencies (Node.js 20.9+)
+npm run dev     # http://localhost:3000/tr/
+npm run build   # static export to ./out
 ```
-src/
-  app/
-    [locale]/            Dil önekli sayfalar (ana sayfa, sertifikalar, proje detayları, og.png)
-    page.tsx             Kök adresten dile yönlendirme
-    Certificates/        Eski /Certificates bağlantısı için yönlendirme
-    sitemap.ts, robots.ts, icon.svg, not-found.tsx
-  components/
-    layout/              Header, Footer, marka, dil ve tema düğmeleri
-    sections/            Ana sayfa bölümleri
-    projects/, certificates/, seo/, ui/
-  content/               Projeler, uygulamalar, sertifikalar, site bilgileri
-  i18n/                  Dil ayarları ve TR / EN sözlükleri
-  lib/                   Rotalar, meta veri, tercihler, tarih ve OG yardımcıları
-scripts/                 Görsel optimizasyonu ve otomasyon kapak diyagramı script'leri
-```
 
-## Yayın
+Content lives in `src/content/` and `src/i18n/dictionaries/`. The change history is kept in Turkish in [DEGISIKLIKLER.md](DEGISIKLIKLER.md).
 
-`main` dalına yapılan her push, `.github/workflows/nextjs.yml` iş akışıyla build edilip GitHub Pages'e yayınlanır. Yayın durumu GitHub'da **Actions** sekmesinden izlenir.
+</details>
 
-- `gh-pages` dalına push yapmayın: o dalda eski (2025) site duruyor ve yeniden yayına çıkabilir.
-- `app-ads.txt` (AdMob) ayrı bir repodan (`Ahmetyilmazz/app-ads.txt`) yayınlanır; bu repodaki değişikliklerden etkilenmez.
-- Workflow'daki `configure-pages` adımına `static_site_generator: next` eklemeyin; `next.config.ts` ayarlarını ezip alt sayfaların 404 vermesine yol açar.
+---
 
-Değişiklik geçmişi: [DEGISIKLIKLER.md](DEGISIKLIKLER.md)
+<sub>© Ahmet YILMAZ. All rights reserved.</sub>

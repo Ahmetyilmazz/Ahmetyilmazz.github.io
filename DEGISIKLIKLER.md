@@ -346,6 +346,17 @@
 
 **Doğrulama**: Metinler ve ikonlar Google Play'den TR/EN olarak alındı. Tüm GitHub linkleri kontrol edildi (yalnızca `English-Learn` 404). Koddaki 41 medya yolunun hepsinin dosyası mevcut. `npm run typecheck` ve `npm run build` başarılı (31 sayfa). Uygulamalar bölümü, Kelengo EN detay sayfası ve projeler bölümü ekran görüntüsüyle incelendi.
 
+## 2026-11-25 — README site ve geliştirici tanıtımı olarak yenilendi
+
+**Ne değişti**
+1. README, repo yalnızca siteyi yayınlamak için durduğundan, geliştirici kılavuzu yerine site ve Ahmet YILMAZ hakkında bir tanıtım sayfası olarak baştan yazıldı: kısa tanıtım ve bağlantı rozetleri (site, LinkedIn, Google Play), sitenin ekran görüntüsü, hakkımda, Google Play'deki uygulamalar (kendi yayınladıkları ve ORELTEK için geliştirilenler, mağaza bağlantılarıyla), öne çıkan projeler (site sayfalarına bağlantılı), teknolojiler, hizmetler, iletişim, açılır Türkçe özet ve açılır kısa "repo hakkında" bölümü. Metinler sitede yayında olan içerikten alındı.
+2. Ekran görüntüsü `.github/assets/preview.png` olarak eklendi (yerel build'den, 1440×900).
+3. Bakım ayrıntıları (git kimliği ayarı, yayınla ilgili uyarılar, içerik güncelleme komutları) README'den repoya dahil olmayan yerel notlara taşındı.
+
+**Dosyalar**: `README.md`, `.github/assets/preview.png`, `DEGISIKLIKLER.md`
+
+**Doğrulama**: Takip edilen dosyalarda ilgili adların geçmediği `git grep` ile kontrol edildi; `npm run build` başarılı.
+
 ## Açık kalan işler
 - Demo videoları (~100 MB) sıkıştırılabilir; bunun için `ffmpeg` ya da HandBrake gerekiyor.
 - YouTube Shorts projesindeki "tamamen yerelde" ifadesi: kullanılan TTS internet üzerinden çalışan bir servisse metin "dil modeli yerelde" olarak düzeltilmeli (kullanıcıdan teyit bekleniyor).
